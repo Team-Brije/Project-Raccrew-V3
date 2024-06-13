@@ -58,8 +58,9 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, smoothtime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
-            rb.velocity = movedir.normalized * speed;
-            rb.velocity = new Vector3(rb.velocity.x, -1.2f, rb.velocity.z);
+           /* rb.velocity = movedir.normalized * speed;
+            rb.velocity = new Vector3(rb.velocity.x, -1.2f, rb.velocity.z);*/
+           rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
         }
         else
         {
