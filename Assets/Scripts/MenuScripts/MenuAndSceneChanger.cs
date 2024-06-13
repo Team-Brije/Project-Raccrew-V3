@@ -10,9 +10,16 @@ public class MenuAndSceneChanger : MonoBehaviour
     public GameObject SettingsPanel;
     private int resx = 1920, resy = 1080;
     private FullScreenMode mode = FullScreenMode.ExclusiveFullScreen;
+    public static string gamemode;
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void GamemodeScene(string scene)
+    {
+        gamemode = scene;
+        SceneManager.LoadScene("Loading");
     }
 
     public void SwitchPanel()
