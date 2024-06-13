@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class ScriptableObjPower : ScriptableObject
 {
+    public Sprite img;
     public abstract void Apply(GameObject target);
   
 }
