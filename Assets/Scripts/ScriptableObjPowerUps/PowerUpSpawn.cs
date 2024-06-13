@@ -8,6 +8,6 @@ public class PowerUpSpawn : ScriptableObjPower
     public GameObject PrefabToSpawn;
     public override void Apply(GameObject target)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Spawnea Algo");
     }
 }

@@ -8,6 +8,6 @@ public class PowerUpAttack : ScriptableObjPower
     public string AnimationName;
     public override void Apply(GameObject target)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Este inicia una Animacion");
     }
 }

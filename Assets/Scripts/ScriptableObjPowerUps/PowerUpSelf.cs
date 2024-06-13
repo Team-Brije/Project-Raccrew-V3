@@ -9,6 +9,6 @@ public class PowerUpSelf : ScriptableObjPower
     public Material materialChange;
     public override void Apply(GameObject target)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Este es un Buff Al Jugador");
     }
 }
