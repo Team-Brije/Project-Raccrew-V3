@@ -13,7 +13,6 @@ public class PlayerSelectScript : MonoBehaviour
     public GameObject player4;
     public GameObject[] UIElements;
     public int id = 0;
-    public GameObject SpawnPlatform;
 
     // Call this method when you want to join a player manually
  
