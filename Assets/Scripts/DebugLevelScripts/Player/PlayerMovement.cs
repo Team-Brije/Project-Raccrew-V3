@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         previousPosition = transform.position; //initialize the previous position
         yAxis = new Vector3(0, 1, 0); //initialize the y axis vector
         speed = initialspeed;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
     }
 
     // Update is called once per frame

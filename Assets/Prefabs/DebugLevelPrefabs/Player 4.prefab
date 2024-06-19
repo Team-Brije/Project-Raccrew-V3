@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6286747814775432036}
   m_Layer: 0
-  m_Name: PlayerTest
+  m_Name: Player 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1385508034238685459}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Player1
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   isOut: 0
   movement: {fileID: 4296871786248134731}
   PlayerName: Player 1
-  MapacheColor: {r: 1, g: 0, b: 0, a: 1}
+  MapacheColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1385508034238685459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +353,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6abdb9f7-6f2c-4bae-bc0c-5b389ed21585
     m_ActionName: Movement/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9c967af-8f97-4db7-8d1e-d53ed1f9c4a4
+    m_ActionName: Movement/UseAbility[/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
