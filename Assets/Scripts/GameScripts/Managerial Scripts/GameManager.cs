@@ -76,19 +76,19 @@ public class GameManager : MonoBehaviour
     {
         if (RoundsWonP1 == 3)
         {
-            Debug.Log("Winner IS P1");
+            Debug.Log("Game Winner IS P1");
         }
         if (RoundsWonP2 == 3)
         {
-            Debug.Log("Winner IS P2");
+            Debug.Log("Game Winner IS P2");
         }
         if (RoundsWonP3 == 3)
         {
-            Debug.Log("Winner IS P3");
+            Debug.Log("Game Winner IS P3");
         }
         if (RoundsWonP4 == 3)
         {
-            Debug.Log("Winner IS P4");
+            Debug.Log("Game Winner IS P4");
         }
     }
 

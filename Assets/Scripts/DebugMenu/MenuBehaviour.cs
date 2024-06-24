@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuBehaviour : MonoBehaviour
 {
@@ -43,6 +44,12 @@ public class MenuBehaviour : MonoBehaviour
         speed.text = speedDemo.ToString();
         dashSpeed.text = dashSpeedDemo.ToString();
     }   
+
+    public void ReloadScene()
+    {
+        string current = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(current);
+    }
 
     public void InitializePlayers()
     {
