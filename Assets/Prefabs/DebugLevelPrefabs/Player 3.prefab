@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOut: 0
   movement: {fileID: 4296871786248134731}
-  PlayerName: Player 1
+  PlayerName: Player 3
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1385508034238685459
 MonoBehaviour:

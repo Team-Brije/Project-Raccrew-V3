@@ -9,12 +9,17 @@ public class GameManager : MonoBehaviour
     public List<PlayerStatus> playerList;
     [SerializeField] private List<GameObject> players = new List<GameObject>();
     public RawImage WinnerColor;
+    public static int RoundsWonP1;
+    public static int RoundsWonP2;
+    public static int RoundsWonP3;
+    public static int RoundsWonP4;
+    public bool roundOver = false;
 
     // Start is called before the first frame update
     private void Start()
     {
-        AddPlayers();
-        Setup();
+        InitializeGame();
+        roundOver = false;
     }
 
     // Update is called once per frame
@@ -31,10 +36,59 @@ public class GameManager : MonoBehaviour
 
         if (playerList.Count == 1)
         {
-            Color winnercolor = playerList[0].MapacheColor;
+            Color winnercolor = playerList[0].GetComponent<MeshRenderer>().material.color;
             string winner = playerList[0].PlayerName;
             Debug.Log("The winner is " + winner);
             WinnerColor.color = winnercolor;
+
+            if(winner == "Player 1" && !roundOver)
+            {
+                RoundsWonP1++;
+                roundOver = true;
+            }
+            if (winner == "Player 2" && !roundOver)
+            {
+                RoundsWonP2++;
+                roundOver = true;
+            }
+            if (winner == "Player 3" && !roundOver)
+            {
+                RoundsWonP3++;
+                roundOver = true;
+            }
+            if (winner == "Player 4" && !roundOver)
+            {
+                RoundsWonP4++;
+                roundOver = true;
+            }
+
+            CheckForWinner();
+        }
+    }
+
+    public void InitializeGame()
+    {
+        AddPlayers();
+        Setup();
+    }
+
+    public void CheckForWinner()
+    {
+        if (RoundsWonP1 == 3)
+        {
+            Debug.Log("Winner IS P1");
+        }
+        if (RoundsWonP2 == 3)
+        {
+            Debug.Log("Winner IS P2");
+        }
+        if (RoundsWonP3 == 3)
+        {
+            Debug.Log("Winner IS P3");
+        }
+        if (RoundsWonP4 == 3)
+        {
+            Debug.Log("Winner IS P4");
         }
     }
 
