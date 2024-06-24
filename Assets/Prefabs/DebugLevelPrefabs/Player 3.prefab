@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 5435027136730502096}
   - component: {fileID: 4296871786248134731}
   - component: {fileID: 1009533199632622806}
+  - component: {fileID: 1917516177516524330}
   - component: {fileID: 1385508034238685459}
   m_Layer: 0
   m_Name: Capsule
@@ -311,6 +312,18 @@ MonoBehaviour:
   movement: {fileID: 4296871786248134731}
   PlayerName: Player 3
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1917516177516524330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224672625276285874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75d7a7e96963b643bf47a03da01688c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1385508034238685459
 MonoBehaviour:
   m_ObjectHideFlags: 0

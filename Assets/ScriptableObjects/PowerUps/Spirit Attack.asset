@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819328d721c314942903c17f0f966f81, type: 3}
   m_Name: Spirit Attack
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
+  img: {fileID: 21300000, guid: f452b117d6c7ac2429728259e3f76ecb, type: 3}
   PrefabToSpawn: {fileID: 0}

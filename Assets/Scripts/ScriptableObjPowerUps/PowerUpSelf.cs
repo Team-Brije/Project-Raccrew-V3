@@ -6,9 +6,10 @@ using UnityEngine;
 public class PowerUpSelf : ScriptableObjPower
 {
     public int Speed;
+    public int duration;
     public Material materialChange;
     public override void Apply(GameObject target)
     {
-        Debug.Log("Este es un Buff Al Jugador");
+        target.GetComponent<PlayerPowerupStorage>().ChangeSpeed(Speed, duration);
     }
 }
