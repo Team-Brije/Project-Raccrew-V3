@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehaviour : MonoBehaviour
 {
-    public int speedDemo = 5;
-    public int dashSpeedDemo = 10;
 
     public GameObject menu;
     private bool menuActive = true;
@@ -15,11 +13,6 @@ public class MenuBehaviour : MonoBehaviour
     public GameManager gameManager;
 
     public TextMeshProUGUI[] roundswon;
-
-    public TextMeshProUGUI phantomModeOn;
-    public TextMeshProUGUI phantomModeOff;
-
-    public TextMeshProUGUI speed;
 
     public TextMeshProUGUI dashSpeed;
 
@@ -44,8 +37,7 @@ public class MenuBehaviour : MonoBehaviour
         roundswon[2].text = GameManager.RoundsWonP3.ToString();
         roundswon[3].text = GameManager.RoundsWonP4.ToString();
 
-        speed.text = speedDemo.ToString();
-        dashSpeed.text = dashSpeedDemo.ToString();
+        dashSpeed.text = PlayerMovement.dashPercentageBoost.ToString();
     }   
 
     public void ReloadScene()
@@ -65,34 +57,13 @@ public class MenuBehaviour : MonoBehaviour
         PlayerUI.SetActive(false);
     }
 
-    public void PhantomModeOn()
-    {
-        phantomModeOff.color = Color.white;
-        phantomModeOn.color = Color.green;
-    }
-    public void PhantomModeOff()
-    {
-        phantomModeOff.color = Color.green;
-        phantomModeOn.color = Color.white;
-    }
-
-    public void SpeedUp()
-    {
-        speedDemo ++; 
-    }
-
-    public void SpeedDown()
-    {
-        speedDemo --;
-    }
-
     public void DashSpeedUp()
     {
-        dashSpeedDemo ++;
+        PlayerMovement.dashPercentageBoost += .1f;
     }
 
     public void DashSpeedDown()
     {
-        dashSpeedDemo --;
+        PlayerMovement.dashPercentageBoost -= .1f;
     }
 }
