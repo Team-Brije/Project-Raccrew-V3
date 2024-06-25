@@ -23,6 +23,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 previousPosition; //the previous position of the gameobject
     private Vector3 velocity; //the velocity vector of the gameobject
     private Vector3 yAxis; //the y axis vector
+    private Vector3 movedir;
+    [Header("Dash Parameters")]
+
+    public float dashDuration;
+
+    public float dashPercentageBoost;
+
+    bool canDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -58,12 +66,13 @@ public class PlayerMovement : MonoBehaviour
             float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, smoothtime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            Vector3 movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
+            movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
             /*
             rb.velocity = movedir.normalized * speed;
             rb.velocity = new Vector3(rb.velocity.x, -9.8f, rb.velocity.z);
             */
-           rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
+            rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
+          
         }
         /*
         else
@@ -78,5 +87,25 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+    }
+
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if(context.performed && canDash)
+        {
+            StartCoroutine(Dashing());
+        }
+    }
+
+    public IEnumerator Dashing()
+    {
+        Debug.Log("Dashing");
+        canDash = false;
+        float startspeed = initialspeed;
+        float dashingspeed = initialspeed * dashPercentageBoost;
+        rb.AddForce(movedir.normalized * dashingspeed, ForceMode.Impulse);
+        yield return new WaitForSeconds(dashDuration);
+        //initialspeed = startspeed;
+        canDash = true;
     }
 }

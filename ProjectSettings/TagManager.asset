@@ -13,6 +13,10 @@ TagManager:
   - UIP2
   - UIP3
   - UIP4
+  - PlayerUI1
+  - PlayerUI2
+  - PlayerUI3
+  - PlayerUI4
   layers:
   - Default
   - TransparentFX

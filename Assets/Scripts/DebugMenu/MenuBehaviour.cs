@@ -23,6 +23,9 @@ public class MenuBehaviour : MonoBehaviour
 
     public TextMeshProUGUI dashSpeed;
 
+    public GameObject PlayerUI;
+    public GameObject InitializePlayersButton;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U) && menuActive)
@@ -54,6 +57,12 @@ public class MenuBehaviour : MonoBehaviour
     public void InitializePlayers()
     {
         gameManager.InitializeGame();
+        InitializePlayersButton.SetActive(false);
+    }
+
+    public void DisableUI()
+    {
+        PlayerUI.SetActive(false);
     }
 
     public void PhantomModeOn()

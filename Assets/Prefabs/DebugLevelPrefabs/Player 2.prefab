@@ -276,7 +276,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4296871786248134731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +296,8 @@ MonoBehaviour:
   initialspeed: 125
   scalingspeed: 11
   smoothtime: 0.1
+  dashDuration: 5
+  dashPercentageBoost: 0.2
 --- !u!114 &1009533199632622806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +372,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f9c967af-8f97-4db7-8d1e-d53ed1f9c4a4
     m_ActionName: Movement/UseAbility[/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4296871786248134731}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5ff03ae5-912a-414a-a545-d2fa79fe01ca
+    m_ActionName: Movement/Dash[/Keyboard/shift,/DualShock4GamepadHID/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
