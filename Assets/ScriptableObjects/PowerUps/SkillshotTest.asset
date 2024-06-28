@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7f05dc1d21f49419f5cc4292fe747e, type: 3}
+  m_Name: SkillshotTest
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: 8100b899004412f448afc6f93ab10451, type: 3}
+  BulletToSpawn: {fileID: 1198030736354838783, guid: fbe2390a8e3b5a44fb4d25b8af05951c,
+    type: 3}
+  Trajectory: {fileID: 8116522016223974450, guid: 095d0afa54165b84d9e84ab7f19f8b5f,
+    type: 3}

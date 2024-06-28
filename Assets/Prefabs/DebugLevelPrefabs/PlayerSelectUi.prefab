@@ -156,7 +156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press A/X to join
+  m_text: Press B/O to join
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 977bdd9c15cf35a4fa49633527e4d1ef, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &3721278290689024642
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 977bdd9c15cf35a4fa49633527e4d1ef, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &4248830199057002297
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 7959e797fc4c2cd4aa4af1041fd04a31, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &5052643414197648596
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 4441a666c0eb44f429c34ee1dc068cbe, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &6513693344052914295
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 7959e797fc4c2cd4aa4af1041fd04a31, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &7124627781453227076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 7959e797fc4c2cd4aa4af1041fd04a31, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &7449047373868939166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 977bdd9c15cf35a4fa49633527e4d1ef, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &7577861049152250953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 4441a666c0eb44f429c34ee1dc068cbe, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &8039067682557038699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSkin: {fileID: 11400000, guid: 4441a666c0eb44f429c34ee1dc068cbe, type: 2}
   canvas: {fileID: 7007343820071797205}
+  playerNumber: 0
 --- !u!1 &9199254313812181810
 GameObject:
   m_ObjectHideFlags: 0
