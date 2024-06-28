@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float dashDuration;
 
-     static public float dashPercentageBoost = 0.2f;
+    public float dashPercentageBoost = 0.2f;
 
     bool canDash = true;
 

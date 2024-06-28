@@ -7,13 +7,14 @@ public class Countdown : MonoBehaviour
 {
     public int duration = 60;
     public int timeRemaining;
-    static public bool isCountingDown = false;
+    public bool isCountingDown = false;
     public TextMeshProUGUI timerText;
 
     private void Start()
     {
         timerText.text = duration.ToString();
-        Begin();
+        timeRemaining = duration;
+        //Begin();
     }
 
     public void Begin()
@@ -21,26 +22,28 @@ public class Countdown : MonoBehaviour
         if (!isCountingDown)
         {
             isCountingDown = true;
-            timeRemaining = duration;
             Invoke("_tick", 1f);
         }
     }
 
+
+    public void Stop()
+    {
+        isCountingDown = false;
+        timerText.text = timeRemaining.ToString();
+    }
+
     private void _tick()
     {
-        if (isCountingDown) 
+        timeRemaining--;
+        if (timeRemaining > 0 && isCountingDown)
         {
-            timeRemaining--;
-                if (timeRemaining > 0)
-            {
-                Invoke("_tick", 1f);
-            }
-            else
-            {
-                isCountingDown = false;
-            }
-            timerText.text = timeRemaining.ToString();
+            Invoke("_tick", 1f);
         }
-       else Invoke("_tick", 1f);
+        else
+        {
+            isCountingDown = false;
+        }
+        timerText.text = timeRemaining.ToString();
     }
 }

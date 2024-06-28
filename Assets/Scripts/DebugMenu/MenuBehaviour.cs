@@ -14,10 +14,16 @@ public class MenuBehaviour : MonoBehaviour
 
     public TextMeshProUGUI[] roundswon;
 
+    [Header("Speed & Dash Variables")]
     public TextMeshProUGUI dashSpeed;
+    public TextMeshProUGUI speed;
 
     public GameObject PlayerUI;
     public GameObject InitializePlayersButton;
+
+    public List<GameObject> players;
+
+    public Countdown countdown;
 
     private void Update()
     {
@@ -37,7 +43,11 @@ public class MenuBehaviour : MonoBehaviour
         roundswon[2].text = GameManager.RoundsWonP3.ToString();
         roundswon[3].text = GameManager.RoundsWonP4.ToString();
 
-        dashSpeed.text = PlayerMovement.dashPercentageBoost.ToString();
+        if(players != null)
+        {
+            dashSpeed.text = players[0].GetComponent<PlayerMovement>().dashPercentageBoost.ToString();
+            speed.text = players[0].GetComponent<PlayerMovement>().initialspeed.ToString();
+        }
     }   
 
     public void ReloadScene()
@@ -49,7 +59,28 @@ public class MenuBehaviour : MonoBehaviour
     public void InitializePlayers()
     {
         gameManager.InitializeGame();
+        AddPlayers();
         InitializePlayersButton.SetActive(false);
+    }
+
+    public void AddPlayers()
+    {
+        if (GameObject.FindGameObjectWithTag("Player1"))
+        {
+            players.Add(GameObject.FindGameObjectWithTag("Player1"));
+        }
+        if (GameObject.FindGameObjectWithTag("Player2"))
+        {
+            players.Add(GameObject.FindGameObjectWithTag("Player2"));
+        }
+        if (GameObject.FindGameObjectWithTag("Player3"))
+        {
+            players.Add(GameObject.FindGameObjectWithTag("Player3"));
+        }
+        if (GameObject.FindGameObjectWithTag("Player4"))
+        {
+            players.Add(GameObject.FindGameObjectWithTag("Player4"));
+        }
     }
 
     public void DisableUI()
@@ -59,22 +90,44 @@ public class MenuBehaviour : MonoBehaviour
 
     public void DashSpeedUp()
     {
-        PlayerMovement.dashPercentageBoost += .1f;
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerMovement>().dashPercentageBoost += .1f;
+        }
     }
 
     public void DashSpeedDown()
     {
-        PlayerMovement.dashPercentageBoost -= .1f;
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerMovement>().dashPercentageBoost -= .1f;
+        }
+    }
+
+    public void SpeedUp()
+    {
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerMovement>().initialspeed += 10f;
+        }
+    }
+
+    public void SpeedDown()
+    {
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerMovement>().initialspeed -= 10f;
+        }
     }
 
     public void StopTimer()
     {
-        Countdown.isCountingDown = false;
+        countdown.Stop();
     }
 
     public void ContinueTimer()
     {
-        Countdown.isCountingDown = true;
+        countdown.Begin();
     }
 
 }
