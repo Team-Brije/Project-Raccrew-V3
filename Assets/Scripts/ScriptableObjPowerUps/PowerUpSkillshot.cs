@@ -9,6 +9,9 @@ public class PowerUpSkillshot : ScriptableObjPower
     public GameObject Trajectory;
     public override void Apply(GameObject target)
     {
-        Debug.Log("Spawnea Un Proyectil");
+        target.GetComponent<PlayerPowerupStorage>().ID = 1;
+        target.GetComponent<PlayerPowerupStorage>().hasobject = false;
+        target.GetComponent<PlayerPowerupStorage>().SetObjects(BulletToSpawn, Trajectory);
+        target.GetComponent<PlayerPowerupStorage>().SpawnObject();
     }
 }

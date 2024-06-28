@@ -7,8 +7,13 @@ public class PlayerPowerupStorage : MonoBehaviour
 {
     PlayerMovement player;
     Animator animator;
-    public Transform objectspawn;
+    public Transform objectspawnback;
+    public Transform objectspawnfront;
     [HideInInspector]public bool hasobject = false;
+    [HideInInspector]public int ID; //0 = back, 1 = front
+    public DeletePlaceholder delobj0;
+    public DeletePlaceholder delobj1;
+
 
     GameObject prefabtospawn;
     GameObject placeholderprefab;
@@ -44,17 +49,33 @@ public class PlayerPowerupStorage : MonoBehaviour
 
     public void SpawnObject()
     {
-        if(!hasobject)
+        if(!hasobject && ID == 0)
         {
-            Instantiate(placeholderprefab, objectspawn);
+            Instantiate(placeholderprefab, objectspawnback);
+            delobj1.DeleteObjects();
+            hasobject = true;
+        }
+        if (!hasobject && ID == 1)
+        {
+            Instantiate(placeholderprefab, objectspawnfront);
+            delobj0.DeleteObjects();
             hasobject = true;
         }
     }
 
     public void SpawnTrueObject()
     {
-        Instantiate(prefabtospawn);
-
+        if (ID == 0)
+        {
+            Vector3 position = objectspawnback.position;
+            Instantiate(prefabtospawn,position,Quaternion.identity);
+        }
+        if (ID == 1)
+        {
+            Vector3 position = objectspawnfront.position;
+            Instantiate(prefabtospawn, position, Quaternion.identity);
+        }
+        hasobject = false;
     }
 
     public void UseObject(InputAction.CallbackContext context)
@@ -62,6 +83,14 @@ public class PlayerPowerupStorage : MonoBehaviour
         if(context.performed && hasobject)
         {
             SpawnTrueObject();
+            if(ID == 0)
+            {
+                delobj0.DeleteObjects();
+            }
+            if(ID == 1)
+            {
+                delobj1.DeleteObjects();
+            }
         }
     }
 }
