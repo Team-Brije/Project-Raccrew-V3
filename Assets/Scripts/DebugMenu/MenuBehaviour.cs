@@ -66,4 +66,15 @@ public class MenuBehaviour : MonoBehaviour
     {
         PlayerMovement.dashPercentageBoost -= .1f;
     }
+
+    public void StopTimer()
+    {
+        Countdown.isCountingDown = false;
+    }
+
+    public void ContinueTimer()
+    {
+        Countdown.isCountingDown = true;
+    }
+
 }
