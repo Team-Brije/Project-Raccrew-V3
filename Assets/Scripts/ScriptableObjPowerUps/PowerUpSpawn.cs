@@ -6,9 +6,11 @@ using UnityEngine;
 public class PowerUpSpawn : ScriptableObjPower
 {
     public GameObject PrefabToSpawn;
+    public GameObject placeholderPrefab;
     public override void Apply(GameObject target)
     {
-        
-        Debug.Log("Spawnea Algo");
+        target.GetComponent<PlayerPowerupStorage>().hasobject = false;
+        target.GetComponent<PlayerPowerupStorage>().SetObjects(PrefabToSpawn,placeholderPrefab);
+        target.GetComponent<PlayerPowerupStorage>().SpawnObject();
     }
 }

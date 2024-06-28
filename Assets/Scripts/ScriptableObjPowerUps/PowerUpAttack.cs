@@ -8,6 +8,6 @@ public class PowerUpAttack : ScriptableObjPower
     public string AnimationName;
     public override void Apply(GameObject target)
     {
-        Debug.Log("Este inicia una Animacion");
+        target.GetComponent<PlayerPowerupStorage>().StartAnim(AnimationName);
     }
 }
