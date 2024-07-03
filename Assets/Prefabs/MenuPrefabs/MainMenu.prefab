@@ -3434,6 +3434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuPanel: {fileID: 7908677216375799583}
   SettingsPanel: {fileID: 5773552251282132199}
+  eventSystem: {fileID: 4423618321049741715}
+  PlayButton: {fileID: 5514640439809956811}
+  SettingsButton: {fileID: 6212387560541656906}
 --- !u!1 &3749526039099532907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,7 +5123,7 @@ GameObject:
   - component: {fileID: 8462525549698216003}
   - component: {fileID: 3555482713272551530}
   m_Layer: 5
-  m_Name: Play
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6222,7 +6225,7 @@ GameObject:
   - component: {fileID: 5957852546703388328}
   - component: {fileID: 7255374760665538104}
   m_Layer: 5
-  m_Name: Back
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6354,6 +6357,7 @@ GameObject:
   - component: {fileID: 8846472048346100585}
   - component: {fileID: 7410583069038482979}
   - component: {fileID: 995928935733716735}
+  - component: {fileID: 7708473091134176380}
   m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -6432,7 +6436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -6468,6 +6472,52 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7708473091134176380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273390707498009471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50ba8c57301654a889682155f84a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 76631471-2595-4089-b90f-fc19fbb1b9dc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Scroll
+      m_Id: 7b3fa778-10b0-4c24-973c-4028f8be9121
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: c9841728-9b62-4464-9d7c-ae87ad068d0e
+      m_Path: <Gamepad>/rightStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 78bc3af7-4fb2-4f11-9348-66a9040808d4
+      m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 8
+    m_Flags: 0
+  scrollRect: {fileID: 995928935733716735}
 --- !u!1 &6609014173295313723
 GameObject:
   m_ObjectHideFlags: 0

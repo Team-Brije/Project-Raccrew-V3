@@ -308,6 +308,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI Scroll",
+            "id": "cd5a60e2-454d-46c7-af35-b1c0bfdd1a82",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "6a829eac-d432-47d9-a455-51420f3d8480",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "38f6aa2f-0cc2-43e0-b67c-8040181fc05b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b3238df2-07f6-4d63-a52a-39fb66e28724",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04545939-a925-4060-9a00-c8f61c0d0c29",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
