@@ -15,6 +15,8 @@ public class PlayerSelectScript : MonoBehaviour
     public int id = 0;
     public GameObject SpawnPlatform;
     public GameObject[] PlayerUI;
+    public static bool arePlayersReady = false;
+    public GameObject ReadyText;
     // Call this method when you want to join a player manually
  
     public void EnableUI()
@@ -29,21 +31,39 @@ public class PlayerSelectScript : MonoBehaviour
         }
         if (id == 4)
         {
+            arePlayersReady = false;
             InputManager.playerPrefab = player3;
             PlayerUI[1].SetActive(false);
         }
         if (id == 6)
         {
+            arePlayersReady = false;
             PlayerUI[2].SetActive(false);
             InputManager.playerPrefab = player4;
         }
         if (id == 8)
         {
+            arePlayersReady = false;
             PlayerUI[3].SetActive(false);
             InputManager.playerPrefab = player4;
         }
 
 
         //InputManager.playerPrefab.gameObject.transform = SpawnPlatform.transform;
+    }
+
+    public void Update()
+    {
+        ReadyText.SetActive(arePlayersReady);
+        /*
+        if (arePlayersReady)
+        {
+            ReadyText.SetActive(true);
+        }
+        else
+        {
+            ReadyText.SetActive(false);
+        }
+        */
     }
 }

@@ -33,18 +33,21 @@ public class PlayerSelect : MonoBehaviour
                 player = GameObject.FindGameObjectWithTag("Player2");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
                 playerUI = GameObject.FindGameObjectWithTag("PlayerUI2");
+                PlayerSelectScript.arePlayersReady = true;
                 playerUI.SetActive(false);
                 break;
             case 3:
                 player = GameObject.FindGameObjectWithTag("Player3");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
                 playerUI = GameObject.FindGameObjectWithTag("PlayerUI3");
+                PlayerSelectScript.arePlayersReady = true;
                 playerUI.SetActive(false);
                 break;
             case 4:
                 player = GameObject.FindGameObjectWithTag("Player4");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
                 playerUI = GameObject.FindGameObjectWithTag("PlayerUI4");
+                PlayerSelectScript.arePlayersReady = true;
                 playerUI.SetActive(false);
                 break;
         }

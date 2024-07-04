@@ -14,7 +14,7 @@ public class Countdown : MonoBehaviour
     {
         timerText.text = duration.ToString();
         timeRemaining = duration;
-        //Begin();
+        Begin();
     }
 
     public void Begin()

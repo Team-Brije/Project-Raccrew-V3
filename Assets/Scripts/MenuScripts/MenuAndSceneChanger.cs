@@ -24,6 +24,13 @@ public class MenuAndSceneChanger : MonoBehaviour
     public void GamemodeScene(string scene)
     {
         gamemode = scene;
+        PlayButton.SetActive(false);
+        SettingsButton.SetActive(true);
+        //SceneManager.LoadScene("Loading");
+    }
+
+    public void GamemodeSceneLoad()
+    {
         SceneManager.LoadScene("Loading");
     }
 
