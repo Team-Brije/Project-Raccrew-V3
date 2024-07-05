@@ -18,6 +18,7 @@ public class MenuAndSceneChanger : MonoBehaviour
     public GameObject SettingsButton;
     public void ChangeScene(string sceneName)
     {
+        Debug.Log("Scene");
         SceneManager.LoadScene(sceneName);
     }
 

@@ -18,7 +18,11 @@ public class PlayerSelectScript : MonoBehaviour
     public static bool arePlayersReady = false;
     public GameObject ReadyText;
     // Call this method when you want to join a player manually
- 
+
+    private void Start()
+    {
+        arePlayersReady = false;
+    }
     public void EnableUI()
     {
         Debug.Log("Gaming");
