@@ -52,8 +52,8 @@ public class MenuBehaviour : MonoBehaviour
 
     public void ReloadScene()
     {
-        string current = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(current);
+        
+        SceneManager.LoadScene("DebugCleanser");
     }
 
     public void InitializePlayers()

@@ -68,12 +68,14 @@ public class PlayerPowerupStorage : MonoBehaviour
         if (ID == 0)
         {
             Vector3 position = objectspawnback.position;
-            Instantiate(prefabtospawn,position,Quaternion.identity);
+            Quaternion rotation = objectspawnback.rotation;
+            Instantiate(prefabtospawn,position,rotation);
         }
         if (ID == 1)
         {
             Vector3 position = objectspawnfront.position;
-            Instantiate(prefabtospawn, position, Quaternion.identity);
+            Quaternion rotation = objectspawnfront.rotation;
+            Instantiate(prefabtospawn, position, rotation);
         }
         hasobject = false;
     }

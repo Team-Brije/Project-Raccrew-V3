@@ -361,6 +361,7 @@ MonoBehaviour:
   playerList: []
   players: []
   WinnerColor: {fileID: 9144277377248733630}
+  roundOver: 0
 --- !u!1001 &2688751026903988444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +380,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8eb442de8fe4e4f4893154d27f2108b1, type: 2}
+    - target: {fileID: -8698408860565286412, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,6 +435,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -6733177361254619370, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -6216624082294897785, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -6210177114819365483, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -3160068812241138382, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: -2684476799906797293, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -464,6 +510,21 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -466329591000292508, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: -447275898630060098, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,6 +534,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -309749831646941572, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
       objectReference: {fileID: 0}
     - target: {fileID: -75307587592045121, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
@@ -489,16 +560,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: LayoutDebugLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 2657294529315019629, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: 2683769420613230959, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6284681f4c4cab04cbd22c4ae1d28e98, type: 2}
+    - target: {fileID: 4084739042706096282, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905831959505483966, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989259066713936048, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     - target: {fileID: 7864376728947364303, guid: c391c22e82de22d40a12e64b4c728232,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 062f6aee40a7c4b4eb36840febd8d3b9, type: 2}
+    - target: {fileID: 8416272007918961125, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: c391c22e82de22d40a12e64b4c728232,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: c391c22e82de22d40a12e64b4c728232, type: 3}
