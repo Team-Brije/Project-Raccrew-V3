@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Power Up", menuName = "PowerUps/Self Assigned PowerUp")]
 public class PowerUpSelf : ScriptableObjPower
 {
-    public int Speed;
+    public float Speed;
     public int duration;
     public Material materialChange;
     public override void Apply(GameObject target)

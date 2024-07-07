@@ -17,6 +17,8 @@ TagManager:
   - PlayerUI2
   - PlayerUI3
   - PlayerUI4
+  - PlayerHolder
+  - Stage
   layers:
   - Default
   - TransparentFX

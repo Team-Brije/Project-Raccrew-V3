@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,12 +39,13 @@ public class PlayerMovement : MonoBehaviour
         previousPosition = transform.position; //initialize the previous position
         yAxis = new Vector3(0, 1, 0); //initialize the y axis vector
         speed = initialspeed;
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         velocity = transform.position - previousPosition; //calculate the velocity vector
         previousPosition = transform.position; //update the previous position
 
@@ -94,6 +96,14 @@ public class PlayerMovement : MonoBehaviour
         if(context.performed && canDash)
         {
             StartCoroutine(Dashing());
+        }
+    }
+
+    public void StartGame(InputAction.CallbackContext context)
+    {
+        if(PlayerSelectScript.arePlayersReady && context.performed)
+        {
+            SceneManager.LoadScene("Loading");
         }
     }
 

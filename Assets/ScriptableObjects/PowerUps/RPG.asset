@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7f05dc1d21f49419f5cc4292fe747e, type: 3}
+  m_Name: RPG
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: fad94217c7ee43a4b897202c49968751, type: 3}
+  BulletToSpawn: {fileID: 7307764715654544167, guid: 6e5d3d369eb59c1439133a6cbea583b7,
+    type: 3}
+  Trajectory: {fileID: 6468480861730394447, guid: d3529984bde99a642912049a01d1caec,
+    type: 3}

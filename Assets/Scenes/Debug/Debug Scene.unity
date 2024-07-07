@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Layout
       objectReference: {fileID: 0}
+    - target: {fileID: 2352144893228610941, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2634634386980396094, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
         type: 3}
       propertyPath: m_Name
@@ -386,6 +391,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1061673477362112540, guid: 18bb126039114f14dad384c9fbfd793e,
+        type: 3}
+      propertyPath: _powerUp
+      value: 
+      objectReference: {fileID: 11400000, guid: b7b0911e3f3fa7f4e9a657a6e51671da,
+        type: 2}
     - target: {fileID: 2508806835520983212, guid: 18bb126039114f14dad384c9fbfd793e,
         type: 3}
       propertyPath: m_LocalPosition.x

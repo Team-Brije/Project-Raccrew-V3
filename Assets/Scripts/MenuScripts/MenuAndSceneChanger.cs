@@ -2,23 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class MenuAndSceneChanger : MonoBehaviour
 {
     public GameObject MainMenuPanel;
     public GameObject SettingsPanel;
+    public EventSystem eventSystem;
     private int resx = 1920, resy = 1080;
     private FullScreenMode mode = FullScreenMode.ExclusiveFullScreen;
     public static string gamemode;
+
+    public GameObject PlayButton;
+    public GameObject SettingsButton;
     public void ChangeScene(string sceneName)
     {
+        Debug.Log("Scene");
         SceneManager.LoadScene(sceneName);
     }
 
     public void GamemodeScene(string scene)
     {
         gamemode = scene;
+        PlayButton.SetActive(false);
+        SettingsButton.SetActive(true);
+        //SceneManager.LoadScene("Loading");
+    }
+
+    public void GamemodeSceneLoad()
+    {
         SceneManager.LoadScene("Loading");
     }
 
@@ -27,12 +40,14 @@ public class MenuAndSceneChanger : MonoBehaviour
         if (MainMenuPanel.activeSelf == true)
         {
             MainMenuPanel.SetActive(false);
-            SettingsPanel.SetActive(true);
+            SettingsPanel.SetActive(true);            
+            eventSystem.SetSelectedGameObject(SettingsButton.gameObject);
         }
         else
         {
             MainMenuPanel.SetActive(true);
             SettingsPanel.SetActive(false);
+            eventSystem.SetSelectedGameObject(PlayButton.gameObject);
         }
     }
 
