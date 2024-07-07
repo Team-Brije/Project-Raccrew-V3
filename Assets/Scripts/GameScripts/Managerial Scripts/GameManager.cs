@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -18,8 +19,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        InitializeGame();
         roundOver = false;
+        InitializeGame();
     }
 
     // Update is called once per frame
@@ -45,29 +46,41 @@ public class GameManager : MonoBehaviour
             {
                 RoundsWonP1++;
                 roundOver = true;
+                Invoke("RestartGame", 5);
             }
             if (winner == "Player 2" && !roundOver)
             {
                 RoundsWonP2++;
                 roundOver = true;
+                Invoke("RestartGame", 5);
             }
             if (winner == "Player 3" && !roundOver)
             {
                 RoundsWonP3++;
                 roundOver = true;
+                Invoke("RestartGame", 5);
             }
             if (winner == "Player 4" && !roundOver)
             {
                 RoundsWonP4++;
                 roundOver = true;
+                Invoke("RestartGame", 5);
             }
 
             CheckForWinner();
         }
     }
 
+
+    void RestartGame()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
     public void InitializeGame()
     {
+        CleanList();
         AddPlayers();
         Setup();
     }
@@ -77,19 +90,33 @@ public class GameManager : MonoBehaviour
         if (RoundsWonP1 == 3)
         {
             Debug.Log("Game Winner IS P1");
+            SendToWinnerScreen();
         }
         if (RoundsWonP2 == 3)
         {
             Debug.Log("Game Winner IS P2");
+            SendToWinnerScreen();
         }
         if (RoundsWonP3 == 3)
         {
             Debug.Log("Game Winner IS P3");
+            SendToWinnerScreen();
         }
         if (RoundsWonP4 == 3)
         {
             Debug.Log("Game Winner IS P4");
+            SendToWinnerScreen();
         }
+    }
+
+    public void SendToWinnerScreen()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void CleanList()
+    {
+        playerList.Clear();
     }
 
     public void AddPlayers()
@@ -117,6 +144,8 @@ public class GameManager : MonoBehaviour
         foreach (GameObject player in players)
         {
             playerList.Add(player.GetComponent<PlayerStatus>());
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerStatus>().isOut = false;
         }
     }
 }
