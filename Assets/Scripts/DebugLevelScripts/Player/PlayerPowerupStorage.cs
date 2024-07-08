@@ -28,12 +28,26 @@ public class PlayerPowerupStorage : MonoBehaviour
         animator.Play(name);
     }
 
-    public void ChangeSpeed(float speed, int duration)
+
+    public void ChangeScale(float scale, int duration)
     {
-        StartCoroutine(Timer(duration, speed));
+        StartCoroutine(ScaleTimer(duration, scale));
     }
 
-    public IEnumerator Timer(int duration, float speed)
+    public void ChangeSpeed(float speed, int duration)
+    {
+        StartCoroutine(SpeedTimer(duration, speed));
+    }
+
+    public IEnumerator ScaleTimer(int duration, float scale)
+    {
+        Vector3 vector3 = new Vector3(scale, scale, scale);
+        player.transform.localScale = vector3;
+        yield return new WaitForSeconds(duration);
+        player.transform.localScale = new Vector3(1,1,1);
+    }
+
+    public IEnumerator SpeedTimer(int duration, float speed)
     {
         float originalspeed = player.initialspeed;
         player.initialspeed = speed * originalspeed;
