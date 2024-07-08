@@ -13,8 +13,7 @@ public class PlayerPowerupStorage : MonoBehaviour
     [HideInInspector]public int ID; //0 = back, 1 = front
     public DeletePlaceholder delobj0;
     public DeletePlaceholder delobj1;
-
-
+   
     GameObject prefabtospawn;
     GameObject placeholderprefab;
     private void Start()
@@ -29,9 +28,9 @@ public class PlayerPowerupStorage : MonoBehaviour
     }
 
 
-    public void ChangeScale(float scale, int duration)
+    public void ChangeScale(float scale, int duration, float mass)
     {
-        StartCoroutine(ScaleTimer(duration, scale));
+        StartCoroutine(ScaleTimer(duration, scale, mass));
     }
 
     public void ChangeSpeed(float speed, int duration)
@@ -39,12 +38,15 @@ public class PlayerPowerupStorage : MonoBehaviour
         StartCoroutine(SpeedTimer(duration, speed));
     }
 
-    public IEnumerator ScaleTimer(int duration, float scale)
+    public IEnumerator ScaleTimer(int duration, float scale, float mass)
     {
         Vector3 vector3 = new Vector3(scale, scale, scale);
+        player.GetComponent<Rigidbody>().mass = mass;
         player.transform.localScale = vector3;
         yield return new WaitForSeconds(duration);
         player.transform.localScale = new Vector3(1,1,1);
+        player.GetComponent<Rigidbody>().mass = 1;
+        
     }
 
     public IEnumerator SpeedTimer(int duration, float speed)

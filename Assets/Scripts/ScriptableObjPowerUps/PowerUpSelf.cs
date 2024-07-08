@@ -11,6 +11,7 @@ public class PowerUpSelf : ScriptableObjPower
     public float Speed;
     public int duration;
     public float Scale;
+    public float Mass;
     public Material materialChange;
 
     public override void Apply(GameObject target)
@@ -21,7 +22,7 @@ public class PowerUpSelf : ScriptableObjPower
         }
 
         if(abilityType == AbilityType.Scale) { 
-            target.GetComponent<PlayerPowerupStorage>().ChangeScale(Scale, duration);
+            target.GetComponent<PlayerPowerupStorage>().ChangeScale(Scale, duration, Mass);
             target.GetComponent<PlayerPowerupStorage>().ChangeSpeed(Speed, duration);
         }
     }
