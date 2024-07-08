@@ -142,6 +142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Countdown Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 3313434884210962387, guid: badc55db0990c0c40981316caae8cebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7020856082957154949, guid: badc55db0990c0c40981316caae8cebf,
         type: 3}
       propertyPath: m_LocalPosition.x
