@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public Transform cam;
+    [HideInInspector] public Transform cam;
 
-    public float horizontal;
-    public float vertical;
+    [HideInInspector] public float horizontal;
+    [HideInInspector] public float vertical;
 
     public float initialspeed;
     float speed;
-    public float scalingspeed;
+    private float scalingspeed;
     
 
     public float smoothtime = 0.1f;
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity; //the velocity vector of the gameobject
     private Vector3 yAxis; //the y axis vector
     private Vector3 movedir;
+
     [Header("Dash Parameters")]
 
     public float dashDuration;
@@ -48,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         velocity = transform.position - previousPosition; //calculate the velocity vector
         previousPosition = transform.position; //update the previous position
-
+        /*
         float dot = Vector3.Dot(velocity, yAxis); //calculate the dot product
 
         if (dot > 0.01f)
@@ -61,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = initialspeed;
         }
-
+        */
         Vector3 direction = new Vector3(horizontal * speed, rb.velocity.y * 0, vertical * speed);
         if (direction.magnitude >= 0.1f)
         {
