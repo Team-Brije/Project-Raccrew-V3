@@ -6,14 +6,14 @@ public class Explosion : MonoBehaviour
 {
     public float ExplosionForce;
     public float FloorUpwardsForce;
-
+    public float Time;
 
 
     // Start is called before the first frame update
     void Start()
     {
 
-        Invoke("Die", 1.5f);
+        Invoke("Die", Time);
         
     }
 
