@@ -7,17 +7,20 @@ public class PlayerPowerupStorage : MonoBehaviour
 {
     PlayerMovement player;
     Animator animator;
-    public Transform objectspawnback;
-    public Transform objectspawnfront;
-    [HideInInspector]public bool hasobject = false;
-    [HideInInspector]public int ID; //0 = back, 1 = front
-    public DeletePlaceholder delobj0;
-    public DeletePlaceholder delobj1;
-    int Times;
-
-
     GameObject prefabtospawn;
     GameObject placeholderprefab;
+    int Times;
+
+    [HideInInspector] public bool hasobject = false;
+    [HideInInspector] public int ID; //0 = back, 1 = front
+    [HideInInspector] public string AnimName;
+    [HideInInspector] public bool hasAnim = false;
+
+    public Transform objectspawnback;
+    public Transform objectspawnfront;
+    public DeletePlaceholder delobj0;
+    public DeletePlaceholder delobj1;
+
     private void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -26,9 +29,9 @@ public class PlayerPowerupStorage : MonoBehaviour
 
     public void StartAnim(string name)
     {
-        animator.Play(name);
+        //animator.Play(name);
+        AnimName = name;
     }
-
 
     public void ChangeScale(float scale, int duration)
     {
@@ -78,6 +81,22 @@ public class PlayerPowerupStorage : MonoBehaviour
             hasobject = true;
         }
     }
+
+    public void ResetObjects()
+    {
+        hasobject = false;
+        delobj0.DeleteObjects();
+        delobj1.DeleteObjects();
+        placeholderprefab = null;
+        prefabtospawn = null;
+    }
+
+    public void ResetAnims()
+    {
+        hasAnim = false;
+        AnimName = null;
+    }
+
     public IEnumerator WaitForWave(Vector3 POS,Quaternion ROT)
     {
         for (int i = 0; i < Times; i++)
@@ -87,6 +106,7 @@ public class PlayerPowerupStorage : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
+
     public void SpawnTrueObject()
     {
         if (ID == 0)
@@ -119,4 +139,14 @@ public class PlayerPowerupStorage : MonoBehaviour
             }
         }
     }
+
+    public void PlayAnim(InputAction.CallbackContext context)
+    {
+        if (context.performed && hasAnim)
+        {
+            animator.Play(AnimName);
+            hasAnim = false;
+        }
+    }
+
 }

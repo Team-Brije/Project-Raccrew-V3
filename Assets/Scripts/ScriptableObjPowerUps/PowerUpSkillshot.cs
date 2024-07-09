@@ -10,6 +10,7 @@ public class PowerUpSkillshot : ScriptableObjPower
     public int WavesSpawned;
     public override void Apply(GameObject target)
     {
+        target.GetComponent<PlayerPowerupStorage>().ResetAnims();
         target.GetComponent<PlayerPowerupStorage>().ID = 1;
         target.GetComponent<PlayerPowerupStorage>().hasobject = false;
         target.GetComponent<PlayerPowerupStorage>().SetObjects(BulletToSpawn, Trajectory);

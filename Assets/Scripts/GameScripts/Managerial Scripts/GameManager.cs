@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public static PlayerMovement Player2;
     public static PlayerMovement Player3;
     public static PlayerMovement Player4;
+    public static float MaxDirtPercentage = 2;
 
 
     // Start is called before the first frame update
@@ -162,18 +163,38 @@ public class GameManager : MonoBehaviour
         if (num == 1)
         {
             DirtP1 += percentage;
+
+            if (DirtP1 >= MaxDirtPercentage)
+            {
+                DirtP1 = MaxDirtPercentage;
+            }
         }
         if (num == 2)
         {
             DirtP2 += percentage;
+
+            if (DirtP2 >= MaxDirtPercentage)
+            {
+                DirtP2 = MaxDirtPercentage;
+            }
         }
         if (num == 3)
         {
             DirtP3 += percentage;
+
+            if (DirtP3 >= MaxDirtPercentage)
+            {
+                DirtP3 = MaxDirtPercentage;
+            }
         }
         if (num == 4)
         {
             DirtP4 += percentage;
+
+            if (DirtP4 >= MaxDirtPercentage)
+            {
+                DirtP4 = MaxDirtPercentage;
+            }
         }
     }
 

@@ -397,10 +397,10 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   initialspeed: 125
-  scalingspeed: 11
   smoothtime: 0.1
   dashDuration: 5
   dashPercentageBoost: 0.2
+  IFrameDuration: 2
 --- !u!114 &1009533199632622806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,10 +429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75d7a7e96963b643bf47a03da01688c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectspawnback: {fileID: 1751586563292166406}
-  objectspawnfront: {fileID: 7148748091798548559}
   hasobject: 0
   ID: 0
+  AnimName: 
+  hasAnim: 0
+  objectspawnback: {fileID: 1751586563292166406}
+  objectspawnfront: {fileID: 7148748091798548559}
   delobj0: {fileID: 2698977556135320651}
   delobj1: {fileID: 7455679504340945406}
 --- !u!114 &1385508034238685459
@@ -482,6 +484,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1980000166002694254}
         m_TargetAssemblyTypeName: PlayerPowerupStorage, Assembly-CSharp
         m_MethodName: UseObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1980000166002694254}
+        m_TargetAssemblyTypeName: PlayerPowerupStorage, Assembly-CSharp
+        m_MethodName: PlayAnim
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
