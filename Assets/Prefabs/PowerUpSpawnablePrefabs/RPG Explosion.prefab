@@ -102,6 +102,7 @@ MonoBehaviour:
   ExplosionForce: 10
   FloorUpwardsForce: 0
   Time: 1.01
+  DirtPercentage: 0.05
 --- !u!135 &1955848028763560186
 SphereCollider:
   m_ObjectHideFlags: 0

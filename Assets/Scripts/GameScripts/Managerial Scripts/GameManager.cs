@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     public static int RoundsWonP3;
     public static int RoundsWonP4;
     public bool roundOver = false;
+    public static float DirtP1;
+    public static float DirtP2;
+    public static float DirtP3;
+    public static float DirtP4;
 
     // Start is called before the first frame update
     private void Start()
@@ -139,6 +143,26 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    public static void AddPercentage(int num, float percentage)
+    {
+        if (num == 1)
+        {
+            DirtP1 += percentage;
+        }
+        if (num == 2)
+        {
+            DirtP2 += percentage;
+        }
+        if (num == 3)
+        {
+            DirtP3 += percentage;
+        }
+        if (num == 4)
+        {
+            DirtP4 += percentage;
+        }
+    }
+
     public void Setup()
     {
         foreach (GameObject player in players)
@@ -147,5 +171,9 @@ public class GameManager : MonoBehaviour
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<PlayerStatus>().isOut = false;
         }
+        DirtP1 = 1;
+        DirtP2 = 1;
+        DirtP3 = 1;
+        DirtP4 = 1;
     }
 }

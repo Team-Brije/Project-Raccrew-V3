@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     public GameObject MainGameObject;
     public float gravity;
 
-    public int bulletType; //0 = ground hitting, 1 = player hitting
+    public enum BulletType { GroundHitting, PlayerHitting, UnstoppableForce };
+    public BulletType type;
 
     public Vector3 P0, V0;
 
@@ -47,14 +48,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Stage" && bulletType == 0)
+        if(other.gameObject.tag == "Stage" && type == BulletType.GroundHitting)
         {
             Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(MainGameObject);
         }
-        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4" && bulletType == 1)
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4" && type == BulletType.PlayerHitting)
         {
             Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
+            Destroy(MainGameObject);
+        }
+        if(other.gameObject.tag == "Boundary" && type == BulletType.UnstoppableForce)
+        {
             Destroy(MainGameObject);
         }
     }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7676012964725470084}
   - component: {fileID: 7894888979777437126}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: RPG Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 4855033815715970866}
   - component: {fileID: 8324958740279249647}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
