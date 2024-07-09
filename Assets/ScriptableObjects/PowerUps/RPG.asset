@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 3}
   Trajectory: {fileID: 6468480861730394447, guid: d3529984bde99a642912049a01d1caec,
     type: 3}
+  WavesSpawned: 1

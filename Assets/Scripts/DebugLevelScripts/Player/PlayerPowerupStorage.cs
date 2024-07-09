@@ -13,6 +13,7 @@ public class PlayerPowerupStorage : MonoBehaviour
     [HideInInspector]public int ID; //0 = back, 1 = front
     public DeletePlaceholder delobj0;
     public DeletePlaceholder delobj1;
+    int Times;
 
 
     GameObject prefabtospawn;
@@ -61,8 +62,9 @@ public class PlayerPowerupStorage : MonoBehaviour
         placeholderprefab = placeholderprefab1;
     }
 
-    public void SpawnObject()
+    public void SpawnObject(int TimesSpawned)
     {
+        Times = TimesSpawned;   
         if(!hasobject && ID == 0)
         {
             Instantiate(placeholderprefab, objectspawnback);
@@ -76,20 +78,28 @@ public class PlayerPowerupStorage : MonoBehaviour
             hasobject = true;
         }
     }
-
+    public IEnumerator WaitForWave(Vector3 POS,Quaternion ROT)
+    {
+        for (int i = 0; i < Times; i++)
+        {
+            Debug.Log("Shot Fired");
+            Instantiate(prefabtospawn, POS, ROT);
+            yield return new WaitForSeconds(1);
+        }
+    }
     public void SpawnTrueObject()
     {
         if (ID == 0)
         {
             Vector3 position = objectspawnback.position;
             Quaternion rotation = objectspawnback.rotation;
-            Instantiate(prefabtospawn,position,rotation);
+            StartCoroutine(WaitForWave(position, rotation));
         }
         if (ID == 1)
         {
             Vector3 position = objectspawnfront.position;
             Quaternion rotation = objectspawnfront.rotation;
-            Instantiate(prefabtospawn, position, rotation);
+            StartCoroutine(WaitForWave(position, rotation));            
         }
         hasobject = false;
     }

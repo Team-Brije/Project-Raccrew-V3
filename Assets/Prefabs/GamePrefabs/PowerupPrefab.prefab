@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4690beb337a1ed348aee3b455a08a443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerUp: {fileID: 11400000, guid: 8080cf883448b25469bad62ad4fe396f, type: 2}
+  _powerUp: {fileID: 11400000, guid: 520e0dcda3800e74699b900fcd2244b0, type: 2}
