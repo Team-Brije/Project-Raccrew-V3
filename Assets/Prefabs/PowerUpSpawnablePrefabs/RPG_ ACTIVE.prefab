@@ -146,7 +146,7 @@ MonoBehaviour:
     type: 3}
   MainGameObject: {fileID: 7307764715654544167}
   gravity: 0
-  bulletType: 1
+  type: 1
   P0: {x: 0, y: 0, z: 0}
   V0: {x: 0, y: 0, z: 0}
 --- !u!54 &7894888979777437126

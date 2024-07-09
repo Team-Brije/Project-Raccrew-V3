@@ -51,7 +51,7 @@ public class PlayerSelect : MonoBehaviour
                 playerUI.SetActive(false);
                 break;
         }
-        canvas.enabled = false;
+        canvas.gameObject.SetActive(false);
 
     }
 }
