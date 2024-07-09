@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7676012964725470084}
   - component: {fileID: 7894888979777437126}
   m_Layer: 0
-  m_Name: RPG Rocket
+  m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.602502, y: 1.1047884, z: 1.5218503}
-  m_Center: {x: 0, y: 0.4476058, z: 0.26092494}
+  m_Size: {x: 10.05443, y: 5.899093, z: 1.5218503}
+  m_Center: {x: 0, y: 0.05522418, z: 0.26092494}
 --- !u!135 &186157813600078263
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 183094246258857352}
   - component: {fileID: 5218632151775485560}
   - component: {fileID: 3855171734850191465}
+  - component: {fileID: 5567467606354652654}
   - component: {fileID: 12477769660425745}
   m_Layer: 0
   m_Name: Cube
@@ -253,8 +254,8 @@ Transform:
   m_GameObject: {fileID: 7071399705274214217}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 2, z: 0.1}
+  m_LocalPosition: {x: -0, y: -0, z: 0.657}
+  m_LocalScale: {x: 10, y: 6.0046, z: 1.4162964}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2018785236714690555}
@@ -324,12 +325,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5567467606354652654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071399705274214217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca68270cecbcdb40825d558c72e5fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WindStrength: 500
+  FloorUpwardsForce: 0
+  StunTime: 0.5
 --- !u!54 &12477769660425745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -355,8 +371,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!1 &7307764715654544167
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 8094501709554736211}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

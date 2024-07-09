@@ -53,10 +53,13 @@ public class Bullet : MonoBehaviour
             Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(MainGameObject);
         }
-        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4" && type == BulletType.PlayerHitting)
+        if (type == BulletType.PlayerHitting)
         {
-            Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
-            Destroy(MainGameObject);
+            if (other.gameObject.tag == "Player1"  || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4")
+            {
+                Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
+                Destroy(MainGameObject);
+            }
         }
         if(other.gameObject.tag == "Boundary" && type == BulletType.UnstoppableForce)
         {

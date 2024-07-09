@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,11 +15,16 @@ public class GameManager : MonoBehaviour
     public static int RoundsWonP2;
     public static int RoundsWonP3;
     public static int RoundsWonP4;
-    public bool roundOver = false;
     public static float DirtP1;
     public static float DirtP2;
     public static float DirtP3;
     public static float DirtP4;
+    public bool roundOver = false;
+    public static PlayerMovement Player1;
+    public static PlayerMovement Player2;
+    public static PlayerMovement Player3;
+    public static PlayerMovement Player4;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -121,6 +127,10 @@ public class GameManager : MonoBehaviour
     public void CleanList()
     {
         playerList.Clear();
+        Player1 = null;
+        Player2 = null;
+        Player3 = null;
+        Player4 = null;
     }
 
     public void AddPlayers()
@@ -128,18 +138,22 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player1"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player1"));
+            Player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerMovement>();
         }
         if (GameObject.FindGameObjectWithTag("Player2"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player2"));
+            Player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerMovement>();
         }
         if (GameObject.FindGameObjectWithTag("Player3"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player3"));
+            Player3 = GameObject.FindGameObjectWithTag("Player3").GetComponent<PlayerMovement>();
         }
         if (GameObject.FindGameObjectWithTag("Player4"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player4"));
+            Player4 = GameObject.FindGameObjectWithTag("Player4").GetComponent<PlayerMovement>();
         }
     }
     
@@ -160,6 +174,30 @@ public class GameManager : MonoBehaviour
         if (num == 4)
         {
             DirtP4 += percentage;
+        }
+    }
+
+    public static void StartStun(int num, float stuntime)
+    {
+        if (stuntime == 0)
+        {
+            return;
+        }
+        if (num == 1)
+        {
+            Player1.EnableStun(stuntime);
+        }
+        if (num == 2)
+        {
+            Player2.EnableStun(stuntime);
+        }
+        if (num == 3)
+        {
+            Player3.EnableStun(stuntime);
+        }
+        if (num == 4)
+        {
+            Player4.EnableStun(stuntime);
         }
     }
 
