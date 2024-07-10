@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WindStrength: 500
   FloorUpwardsForce: 0
-  StunTime: 0.5
+  StunTime: 0.25
 --- !u!54 &12477769660425745
 Rigidbody:
   m_ObjectHideFlags: 0
