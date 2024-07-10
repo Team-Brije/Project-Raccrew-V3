@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehaviour : MonoBehaviour
 {
+    public LelevUI LelevUI;
 
     public GameObject menu;
     private bool menuActive = true;
@@ -137,4 +138,12 @@ public class MenuBehaviour : MonoBehaviour
         countdown.Begin();
     }
 
+    public void Fire()
+    {
+        LelevUI.FireUI();
+    }
+    public void Bombs()
+    {
+        LelevUI.BombsUI();
+    }
 }
