@@ -15,6 +15,8 @@ public class MenuBehaviour : MonoBehaviour
 
     public TextMeshProUGUI[] roundswon;
     public TextMeshProUGUI[] DirtPercentage;
+    public GameObject[] Cameras;
+
 
     [Header("Speed & Dash Variables")]
     public TextMeshProUGUI dashSpeed;
@@ -118,6 +120,15 @@ public class MenuBehaviour : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().initialspeed += 10f;
         }
+    }
+
+    public void SwitchCamera(int cameraID)
+    {
+        for(int i = 0; i < Cameras.Length; i++)
+        {
+            Cameras[i].SetActive(false);
+        }
+        Cameras[cameraID].SetActive(true);
     }
 
     public void SpeedDown()
