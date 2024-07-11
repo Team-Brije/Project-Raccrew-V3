@@ -9,7 +9,7 @@ public class Countdown : MonoBehaviour
     public int timeRemaining;
     public bool isCountingDown = false;
     public TextMeshProUGUI timerText;
-
+    public GameObject[] tieBreakersPrefabs;
     private void Start()
     {
         timerText.text = duration.ToString();
@@ -43,7 +43,12 @@ public class Countdown : MonoBehaviour
         else
         {
             isCountingDown = false;
+            TieBreakersSpawner();
         }
         timerText.text = timeRemaining.ToString();
+    }
+    private void TieBreakersSpawner(){
+        int tieBreakerIndex = Random.Range(0, tieBreakersPrefabs.Length);
+        Instantiate(tieBreakersPrefabs[tieBreakerIndex],Vector3.zero,Quaternion.identity);
     }
 }
