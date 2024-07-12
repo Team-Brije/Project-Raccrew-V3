@@ -7,7 +7,7 @@ public class Explosion : MonoBehaviour
     public float ExplosionForce;
     public float FloorUpwardsForce;
     public float Time;
-
+    public float DirtPercentage;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,47 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     { 
-        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4")
+        if (other.gameObject.tag == "Player1")
         {
-            other.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, gameObject.transform.position, Random.Range(5, 10), FloorUpwardsForce,ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * GameManager.DirtP1 , gameObject.transform.position, Random.Range(5, 10), FloorUpwardsForce,ForceMode.Impulse);
+            
+        }
+        if (other.gameObject.tag == "Player2")
+        {
+            other.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * GameManager.DirtP2, gameObject.transform.position, Random.Range(5, 10), FloorUpwardsForce, ForceMode.Impulse);
+            
+        }
+        if (other.gameObject.tag == "Player3")
+        {
+            other.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * GameManager.DirtP3, gameObject.transform.position, Random.Range(5, 10), FloorUpwardsForce, ForceMode.Impulse);
+            
+        }
+        if (other.gameObject.tag == "Player4")
+        {
+            other.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * GameManager.DirtP4, gameObject.transform.position, Random.Range(5, 10), FloorUpwardsForce, ForceMode.Impulse);
+            
+        }
+
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player1")
+        {
+            GameManager.AddPercentage(1, DirtPercentage);
+        }
+        if (other.gameObject.tag == "Player2")
+        {
+            GameManager.AddPercentage(2, DirtPercentage);
+        }
+        if (other.gameObject.tag == "Player3")
+        {  
+            GameManager.AddPercentage(3, DirtPercentage);
+        }
+        if (other.gameObject.tag == "Player4")
+        {
+            GameManager.AddPercentage(4, DirtPercentage);
         }
     }
 

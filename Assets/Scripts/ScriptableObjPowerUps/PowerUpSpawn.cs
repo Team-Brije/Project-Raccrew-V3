@@ -9,9 +9,10 @@ public class PowerUpSpawn : ScriptableObjPower
     public GameObject placeholderPrefab;
     public override void Apply(GameObject target)
     {
+        target.GetComponent<PlayerPowerupStorage>().ResetAnims();
         target.GetComponent<PlayerPowerupStorage>().ID = 0;
         target.GetComponent<PlayerPowerupStorage>().hasobject = false;
         target.GetComponent<PlayerPowerupStorage>().SetObjects(PrefabToSpawn,placeholderPrefab);
-        target.GetComponent<PlayerPowerupStorage>().SpawnObject();
+        target.GetComponent<PlayerPowerupStorage>().SpawnObject(1);
     }
 }

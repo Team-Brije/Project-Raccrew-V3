@@ -34,6 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
     bool canDash = true;
 
+    bool canMove = true;
+
+    bool IFrames = false;
+
+    public float IFrameDuration = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,41 +55,23 @@ public class PlayerMovement : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         velocity = transform.position - previousPosition; //calculate the velocity vector
         previousPosition = transform.position; //update the previous position
-        /*
-        float dot = Vector3.Dot(velocity, yAxis); //calculate the dot product
-
-        if (dot > 0.01f)
+        if (canMove)
         {
-            Debug.Log("Moving upwards");
-            speed = scalingspeed;
-
-        }
-        else if (dot == 0)
-        {
-            speed = initialspeed;
-        }
-        */
-        Vector3 direction = new Vector3(horizontal * speed, rb.velocity.y * 0, vertical * speed);
-        if (direction.magnitude >= 0.1f)
-        {
-            float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, smoothtime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
-            /*
-            rb.velocity = movedir.normalized * speed;
-            rb.velocity = new Vector3(rb.velocity.x, -9.8f, rb.velocity.z);
-            */
-            rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
+            Vector3 direction = new Vector3(horizontal * speed, rb.velocity.y * 0, vertical * speed);
+            if (direction.magnitude >= 0.1f)
+            {
+                float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, smoothtime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                movedir = Quaternion.Euler(0f, targetangle, 0f) * Vector3.forward;
+                /*
+                rb.velocity = movedir.normalized * speed;
+                rb.velocity = new Vector3(rb.velocity.x, -9.8f, rb.velocity.z);
+                */
+                rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
           
+            }
         }
-        /*
-        else
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
-        */
-
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -98,6 +86,27 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dashing());
         }
+    }
+
+    public void EnableStun(float time)
+    {
+        if (!IFrames)
+        {
+            StartCoroutine(Stun(time));
+            StartCoroutine(IFramesCooldown(IFrameDuration));
+        }
+    }
+
+    IEnumerator IFramesCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    IEnumerator Stun(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
     }
 
     public void StartGame(InputAction.CallbackContext context)

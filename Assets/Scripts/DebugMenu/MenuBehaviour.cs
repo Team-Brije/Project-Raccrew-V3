@@ -13,6 +13,7 @@ public class MenuBehaviour : MonoBehaviour
     public GameManager gameManager;
 
     public TextMeshProUGUI[] roundswon;
+    public TextMeshProUGUI[] DirtPercentage;
 
     [Header("Speed & Dash Variables")]
     public TextMeshProUGUI dashSpeed;
@@ -43,7 +44,13 @@ public class MenuBehaviour : MonoBehaviour
         roundswon[2].text = GameManager.RoundsWonP3.ToString();
         roundswon[3].text = GameManager.RoundsWonP4.ToString();
 
-        if(players != null)
+        DirtPercentage[0].text = GameManager.DirtP1.ToString();
+        DirtPercentage[1].text = GameManager.DirtP2.ToString();
+        DirtPercentage[2].text = GameManager.DirtP3.ToString();
+        DirtPercentage[3].text = GameManager.DirtP4.ToString();
+
+
+        if (players != null)
         {
             dashSpeed.text = players[0].GetComponent<PlayerMovement>().dashPercentageBoost.ToString();
             speed.text = players[0].GetComponent<PlayerMovement>().initialspeed.ToString();
