@@ -7,16 +7,20 @@ public class PlayerPowerupStorage : MonoBehaviour
 {
     PlayerMovement player;
     Animator animator;
+    GameObject prefabtospawn;
+    GameObject placeholderprefab;
+    int Times;
+
+    [HideInInspector] public bool hasobject = false;
+    [HideInInspector] public int ID; //0 = back, 1 = front
+    [HideInInspector] public string AnimName;
+    [HideInInspector] public bool hasAnim = false;
+
     public Transform objectspawnback;
     public Transform objectspawnfront;
-    [HideInInspector]public bool hasobject = false;
-    [HideInInspector]public int ID; //0 = back, 1 = front
     public DeletePlaceholder delobj0;
     public DeletePlaceholder delobj1;
 
-
-    GameObject prefabtospawn;
-    GameObject placeholderprefab;
     private void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -25,9 +29,9 @@ public class PlayerPowerupStorage : MonoBehaviour
 
     public void StartAnim(string name)
     {
-        animator.Play(name);
+        //animator.Play(name);
+        AnimName = name;
     }
-
 
     public void ChangeScale(float scale, int duration)
     {
@@ -61,8 +65,9 @@ public class PlayerPowerupStorage : MonoBehaviour
         placeholderprefab = placeholderprefab1;
     }
 
-    public void SpawnObject()
+    public void SpawnObject(int TimesSpawned)
     {
+        Times = TimesSpawned;   
         if(!hasobject && ID == 0)
         {
             Instantiate(placeholderprefab, objectspawnback);
@@ -77,19 +82,44 @@ public class PlayerPowerupStorage : MonoBehaviour
         }
     }
 
+    public void ResetObjects()
+    {
+        hasobject = false;
+        delobj0.DeleteObjects();
+        delobj1.DeleteObjects();
+        placeholderprefab = null;
+        prefabtospawn = null;
+    }
+
+    public void ResetAnims()
+    {
+        hasAnim = false;
+        AnimName = null;
+    }
+
+    public IEnumerator WaitForWave(Vector3 POS,Quaternion ROT)
+    {
+        for (int i = 0; i < Times; i++)
+        {
+            Debug.Log("Shot Fired");
+            Instantiate(prefabtospawn, POS, ROT);
+            yield return new WaitForSeconds(1);
+        }
+    }
+
     public void SpawnTrueObject()
     {
         if (ID == 0)
         {
             Vector3 position = objectspawnback.position;
             Quaternion rotation = objectspawnback.rotation;
-            Instantiate(prefabtospawn,position,rotation);
+            StartCoroutine(WaitForWave(position, rotation));
         }
         if (ID == 1)
         {
             Vector3 position = objectspawnfront.position;
             Quaternion rotation = objectspawnfront.rotation;
-            Instantiate(prefabtospawn, position, rotation);
+            StartCoroutine(WaitForWave(position, rotation));            
         }
         hasobject = false;
     }
@@ -109,4 +139,14 @@ public class PlayerPowerupStorage : MonoBehaviour
             }
         }
     }
+
+    public void PlayAnim(InputAction.CallbackContext context)
+    {
+        if (context.performed && hasAnim)
+        {
+            animator.Play(AnimName);
+            hasAnim = false;
+        }
+    }
+
 }
