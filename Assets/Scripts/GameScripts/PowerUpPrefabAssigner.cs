@@ -15,7 +15,11 @@ public class PowerUpPrefabAssigner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _powerUp.Apply(other.gameObject);
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4")
+        {
+            _powerUp.Apply(other.gameObject);
+            Destroy(gameObject);
+        }
+        
     }
 }

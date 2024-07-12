@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerSelectScript : MonoBehaviour
 {
+    public static int NumOfPlayers;
     public PlayerInputManager InputManager;
     public GameObject player2;
     public GameObject player3;
@@ -22,6 +23,7 @@ public class PlayerSelectScript : MonoBehaviour
     private void Start()
     {
         arePlayersReady = false;
+        NumOfPlayers = 0;
     }
     public void EnableUI()
     {
@@ -32,24 +34,28 @@ public class PlayerSelectScript : MonoBehaviour
         {
             InputManager.playerPrefab = player2;
             PlayerUI[0].SetActive(false);
+            NumOfPlayers++;
         }
         if (id == 4)
         {
             arePlayersReady = false;
             InputManager.playerPrefab = player3;
             PlayerUI[1].SetActive(false);
+            NumOfPlayers++;
         }
         if (id == 6)
         {
             arePlayersReady = false;
             PlayerUI[2].SetActive(false);
             InputManager.playerPrefab = player4;
+            NumOfPlayers++;
         }
         if (id == 8)
         {
             arePlayersReady = false;
             PlayerUI[3].SetActive(false);
             InputManager.playerPrefab = player4;
+            NumOfPlayers++;
         }
 
 

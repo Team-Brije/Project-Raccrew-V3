@@ -379,7 +379,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &4296871786248134731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +417,7 @@ MonoBehaviour:
   ID: 0
   AnimName: 
   hasAnim: 0
+  playerTag: 
   objectspawnback: {fileID: 4345937676318774972}
   objectspawnfront: {fileID: 3599955612502445753}
   delobj0: {fileID: 4835485567197894701}
