@@ -19,6 +19,7 @@ TagManager:
   - PlayerUI4
   - PlayerHolder
   - Stage
+  - Barrier
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Barriers
   - 
   - 
   - 

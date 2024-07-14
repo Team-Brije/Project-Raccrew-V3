@@ -10,16 +10,21 @@ public class SkillshotSpawn : MonoBehaviour
     private float V0;
     public Transform target;
     private float g = 9.81f;
+    public enum bulletType {StandartBullet, GoldBullet};
+    public bulletType type ;
     // Start is called before the first frame update
     void Start()
     {
-        Angles();
-        Vector3 p0 = shootPoint.position;
-        Quaternion r0 = shootPoint.rotation;
-        Vector3 v0 = V0 * shootPoint.forward;
-        //GameObject bullet = Instantiate(bulletPrefab, p0, r0);
-        bulletPrefab.GetComponent<Bullet>().P0 = p0;
-        bulletPrefab.GetComponent<Bullet>().V0 = v0;
+        if (type == bulletType.StandartBullet)
+        {
+            Angles();
+            Vector3 p0 = shootPoint.position;
+            Quaternion r0 = shootPoint.rotation;
+            Vector3 v0 = V0 * shootPoint.forward;
+            //GameObject bullet = Instantiate(bulletPrefab, p0, r0);
+            bulletPrefab.GetComponent<Bullet>().P0 = p0;
+            bulletPrefab.GetComponent<Bullet>().V0 = v0;
+        }
     }
 
 
