@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public GameObject MainGameObject;
     public float gravity;
 
-    public enum BulletType { GroundHitting, PlayerHitting, UnstoppableForce };
+    public enum BulletType { GroundHitting, PlayerHitting, UnstoppableForce};
     public BulletType type;
 
     public Vector3 P0, V0;

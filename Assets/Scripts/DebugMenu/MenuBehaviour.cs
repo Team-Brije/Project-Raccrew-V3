@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehaviour : MonoBehaviour
 {
+    public LelevUI LelevUI;
 
     public GameObject menu;
     private bool menuActive = true;
@@ -14,6 +15,8 @@ public class MenuBehaviour : MonoBehaviour
 
     public TextMeshProUGUI[] roundswon;
     public TextMeshProUGUI[] DirtPercentage;
+    public GameObject[] Cameras;
+
 
     [Header("Speed & Dash Variables")]
     public TextMeshProUGUI dashSpeed;
@@ -119,6 +122,15 @@ public class MenuBehaviour : MonoBehaviour
         }
     }
 
+    public void SwitchCamera(int cameraID)
+    {
+        for(int i = 0; i < Cameras.Length; i++)
+        {
+            Cameras[i].SetActive(false);
+        }
+        Cameras[cameraID].SetActive(true);
+    }
+
     public void SpeedDown()
     {
         foreach (GameObject player in players)
@@ -137,4 +149,12 @@ public class MenuBehaviour : MonoBehaviour
         countdown.Begin();
     }
 
+    public void Fire()
+    {
+        LelevUI.FireUI();
+    }
+    public void Bombs()
+    {
+        LelevUI.BombsUI();
+    }
 }
