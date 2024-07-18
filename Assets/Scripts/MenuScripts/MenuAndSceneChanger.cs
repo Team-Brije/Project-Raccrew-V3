@@ -130,6 +130,18 @@ public class MenuAndSceneChanger : MonoBehaviour
         }
     }
 
+    public void EnableRumble(bool enabled)
+    {
+        GameManager.CanRumble = enabled;
+        Debug.Log(enabled);
+    }
+
+    public void EnablePowerUps(bool enabled)
+    {
+        GameManager.CanSpawnPowerUps = enabled;
+        Debug.Log(enabled);
+    }
+
     public void SetFPSCap(int val)
     {
         if (val == 0)
@@ -151,6 +163,42 @@ public class MenuAndSceneChanger : MonoBehaviour
         if (val == 4)
         {
             Application.targetFrameRate = 30;
+        }
+    }
+
+    public void ChangeRoundTime(int val)
+    {
+        if (val == 0)
+        {
+            GameManager.GameTimer = 15;
+        }
+        if (val == 1)
+        {
+            GameManager.GameTimer = 30;
+        }
+        if (val == 2)
+        {
+            GameManager.GameTimer = 45;
+        }
+        if (val == 3)
+        {
+            GameManager.GameTimer = 60;
+        }
+    }
+
+    public void ChangeSpawnRate(int val)
+    {
+        if (val == 0)
+        {
+            GameManager.SpawnFrequency = 10;
+        }
+        if (val == 1)
+        {
+            GameManager.SpawnFrequency = 5;
+        }
+        if (val == 2)
+        {
+            GameManager.SpawnFrequency = 3;
         }
     }
 

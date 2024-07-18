@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
     public static PlayerMovement Player3;
     public static PlayerMovement Player4;
     public static float MaxDirtPercentage = 2;
-
+    // --- GAME VARIABLES --- 
+    public static int GameTimer;
+    public static float SpawnFrequency;
+    public static bool CanSpawnPowerUps;
+    public static bool CanRumble;
 
     // Start is called before the first frame update
     private void Start()
