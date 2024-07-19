@@ -12,6 +12,7 @@ public class Countdown : MonoBehaviour
     public GameObject[] tieBreakersPrefabs;
     private void Start()
     {
+        duration = GameManager.GameTimer;
         timerText.text = duration.ToString();
         timeRemaining = duration;
         Begin();
@@ -36,14 +37,19 @@ public class Countdown : MonoBehaviour
     private void _tick()
     {
         timeRemaining--;
+        if (timeRemaining == 0)
+        {
+            TieBreakersSpawner();
+        }
         if (timeRemaining > 0 && isCountingDown)
         {
             Invoke("_tick", 1f);
         }
         else
         {
+            SpawnerPowerUp.SpawnPowerUpTimerBool = false;
             isCountingDown = false;
-            TieBreakersSpawner();
+            
         }
         timerText.text = timeRemaining.ToString();
     }

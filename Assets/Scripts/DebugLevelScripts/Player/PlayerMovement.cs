@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float vertical;
 
     public float initialspeed;
-    float speed;
+    [HideInInspector]public float speed;
     private float scalingspeed;
-    
+    private PlayerInput playerInput;
+    Gamepad gamepad;
 
     public float smoothtime = 0.1f;
     float turnSmoothVelocity;
@@ -32,21 +34,22 @@ public class PlayerMovement : MonoBehaviour
 
     public float dashPercentageBoost = 0.2f;
 
-    bool canDash = true;
+    public bool canDash = true;
 
-    bool canMove = true;
+    public bool canMove = true;
 
-    bool IFrames = false;
+    public bool IFrames = false;
 
     public float IFrameDuration = 2;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
+        gamepad = playerInput.GetDevice<Gamepad>();
         previousPosition = transform.position; //initialize the previous position
         yAxis = new Vector3(0, 1, 0); //initialize the y axis vector
         speed = initialspeed;
-        
     }
 
     // Update is called once per frame
@@ -104,9 +107,22 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Stun(float time)
     {
+        if (gamepad != null && GameManager.CanRumble)
+        {
+            gamepad.SetMotorSpeeds(0.5f, 1f);
+            Invoke(nameof(StopRumble), 0.5f);
+        }
         canMove = false;
         yield return new WaitForSeconds(time);
         canMove = true;
+    }
+
+    public void StopRumble()
+    {
+        if (gamepad != null)
+        {
+            gamepad.SetMotorSpeeds(0, 0);
+        }
     }
 
     public void StartGame(InputAction.CallbackContext context)

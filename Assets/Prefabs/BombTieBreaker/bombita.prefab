@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4742934763728959616}
   - component: {fileID: 7663890257148194292}
   - component: {fileID: 6126157527196955576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bombita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5147341462413400540}
   - component: {fileID: 4042784444408296819}
   - component: {fileID: 7422038808362406269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BombBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 6393736424059121205}
   - component: {fileID: 6066004996227526082}
   - component: {fileID: 3292840742180414000}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BombUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 5961594629974800319}
   - component: {fileID: 5708009521773934376}
   - component: {fileID: 7161816771782974068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mechaeishon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

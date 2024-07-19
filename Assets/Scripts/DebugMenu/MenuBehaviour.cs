@@ -126,9 +126,9 @@ public class MenuBehaviour : MonoBehaviour
     {
         for(int i = 0; i < Cameras.Length; i++)
         {
-            Cameras[i].SetActive(false);
+            Cameras[i].GetComponent<Camera>().depth = 0;
         }
-        Cameras[cameraID].SetActive(true);
+        Cameras[cameraID].GetComponent<Camera>().depth = 1;
     }
 
     public void SpeedDown()

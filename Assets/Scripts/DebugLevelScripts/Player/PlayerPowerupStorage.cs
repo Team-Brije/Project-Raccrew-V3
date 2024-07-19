@@ -59,6 +59,14 @@ public class PlayerPowerupStorage : MonoBehaviour
         player.initialspeed = originalspeed;
     }
 
+    public void MassReset()
+    {
+        ResetAnims();
+        ResetObjects();
+        player.initialspeed = player.speed;
+        player.transform.localScale = new Vector3(1, 1, 1);
+    }
+
     public void SetObjects(GameObject prefabtospawn1, GameObject placeholderprefab1)
     {
         prefabtospawn = prefabtospawn1;

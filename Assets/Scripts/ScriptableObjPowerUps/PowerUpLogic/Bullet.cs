@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
                 Destroy(MainGameObject);
             }
         }
-        if(other.gameObject.tag == "Boundary" && type == BulletType.UnstoppableForce)
+        if(other.gameObject.tag == "BoundaryPU")
         {
             Destroy(MainGameObject);
         }

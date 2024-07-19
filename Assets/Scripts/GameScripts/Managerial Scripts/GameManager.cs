@@ -10,7 +10,14 @@ public class GameManager : MonoBehaviour
 {
     public List<PlayerStatus> playerList;
     [SerializeField] private List<GameObject> players = new List<GameObject>();
-    public RawImage WinnerColor;
+    public Image WinnerColor;
+    public GameObject WinnerScreen;
+    public TMPro.TextMeshProUGUI WinnerText;
+    public GameObject[] wonRounds;
+    bool Softlock = true;
+    public Countdown timer;
+    public float timepercentage;
+    // -- Static Variables --
     public static int RoundsWonP1;
     public static int RoundsWonP2;
     public static int RoundsWonP3;
@@ -19,21 +26,22 @@ public class GameManager : MonoBehaviour
     public static float DirtP2;
     public static float DirtP3;
     public static float DirtP4;
-    public bool roundOver = false;
+    [HideInInspector] public bool roundOver = false;
     public static PlayerMovement Player1;
     public static PlayerMovement Player2;
     public static PlayerMovement Player3;
     public static PlayerMovement Player4;
-    public static float MaxDirtPercentage = 2;
     // --- GAME VARIABLES --- 
-    public static int GameTimer;
-    public static float SpawnFrequency;
-    public static bool CanSpawnPowerUps;
-    public static bool CanRumble;
+    public static float MaxDirtPercentage = 2;
+    public static int GameTimer = 60;
+    public static float SpawnFrequency = 7;
+    public static bool CanSpawnPowerUps = true;
+    public static bool CanRumble = true;
 
     // Start is called before the first frame update
     private void Start()
     {
+        Time.timeScale = 1f;
         roundOver = false;
         InitializeGame();
     }
@@ -41,10 +49,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        foreach(PlayerStatus player in playerList)
+
+        foreach (PlayerStatus player in playerList)
         {
-            if(player.isOut == true)
+            if (player.isOut == true)
             {
                 playerList.Remove(player);
             }
@@ -54,35 +62,71 @@ public class GameManager : MonoBehaviour
         {
             Color winnercolor = playerList[0].GetComponent<MeshRenderer>().material.color;
             string winner = playerList[0].PlayerName;
-            Debug.Log("The winner is " + winner);
+            WinnerScreen.SetActive(true);
+            WinnerText.text = winner + " Wins!";
             WinnerColor.color = winnercolor;
+            Softlock = false;
+            timer.Stop();
+            Time.timeScale = 1 * timepercentage;
 
-            if(winner == "Player 1" && !roundOver)
+            if (winner == "Player 1" && !roundOver)
             {
                 RoundsWonP1++;
                 roundOver = true;
-                Invoke("RestartGame", 5);
+
+                for (int i = 0; i < RoundsWonP1; i++)
+                {
+                    wonRounds[i].gameObject.SetActive(true);
+                }
+
+                Invoke("RestartGame", 5 * timepercentage);
             }
             if (winner == "Player 2" && !roundOver)
             {
                 RoundsWonP2++;
                 roundOver = true;
-                Invoke("RestartGame", 5);
+
+                for (int i = 0; i < RoundsWonP2; i++)
+                {
+                    wonRounds[i].gameObject.SetActive(true);
+                }
+
+                Invoke("RestartGame", 5 * timepercentage);
             }
             if (winner == "Player 3" && !roundOver)
             {
                 RoundsWonP3++;
                 roundOver = true;
-                Invoke("RestartGame", 5);
+
+                for (int i = 0; i < RoundsWonP3; i++)
+                {
+                    wonRounds[i].gameObject.SetActive(true);
+                }
+
+                Invoke("RestartGame", 5 * timepercentage);
             }
             if (winner == "Player 4" && !roundOver)
             {
                 RoundsWonP4++;
                 roundOver = true;
-                Invoke("RestartGame", 5);
+
+                for (int i = 0; i < RoundsWonP4; i++)
+                {
+                    wonRounds[i].gameObject.SetActive(true);
+                }
+
+                Invoke("RestartGame", 5 * timepercentage);
             }
 
             CheckForWinner();
+        }
+
+        if (playerList.Count == 0 && Softlock)
+        {
+            WinnerScreen.SetActive(true);
+            WinnerText.text = "That was literally frame perfect, HOW. No one Wins";
+            WinnerColor.color = Color.grey;
+            Invoke("RestartGame", 5);
         }
     }
 
@@ -98,6 +142,16 @@ public class GameManager : MonoBehaviour
         CleanList();
         AddPlayers();
         Setup();
+        ResetVariables();
+    }
+
+    public void ResetVariables()
+    {
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerMovement>().canDash = true;
+            player.GetComponent<PlayerPowerupStorage>().MassReset();
+        }
     }
 
     public void CheckForWinner()

@@ -309,9 +309,13 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   initialspeed: 125
+  speed: 125
   smoothtime: 0.1
   dashDuration: 5
   dashPercentageBoost: 0.2
+  canDash: 1
+  canMove: 1
+  IFrames: 0
   IFrameDuration: 2
 --- !u!114 &1009533199632622806
 MonoBehaviour:

@@ -9,6 +9,11 @@ public class PlayerMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.RoundsWonP1 = 0;
+        GameManager.RoundsWonP2 = 0;
+        GameManager.RoundsWonP3 = 0;
+        GameManager.RoundsWonP4 = 0;
+
         if (GameObject.FindGameObjectWithTag("PlayerHolder"))
         {
             gameObjects = GameObject.FindGameObjectsWithTag("PlayerHolder");
