@@ -11,6 +11,7 @@ public class PowerUpSkillshot : ScriptableObjPower
     public override void Apply(GameObject target)
     {
         target.GetComponent<PlayerPowerupStorage>().ResetAnims();
+        target.GetComponent<PlayerPowerupStorage>().ResetObjects();
         target.GetComponent<PlayerPowerupStorage>().ID = 1;
         target.GetComponent<PlayerPowerupStorage>().hasobject = false;
         target.GetComponent<PlayerPowerupStorage>().SetObjects(BulletToSpawn, Trajectory);

@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public static float DirtP3;
     public static float DirtP4;
     [HideInInspector] public bool roundOver = false;
+    public bool debug = false;
     public static PlayerMovement Player1;
     public static PlayerMovement Player2;
     public static PlayerMovement Player3;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     public static float SpawnFrequency = 7;
     public static bool CanSpawnPowerUps = true;
     public static bool CanRumble = true;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -121,7 +123,7 @@ public class GameManager : MonoBehaviour
             CheckForWinner();
         }
 
-        if (playerList.Count == 0 && Softlock)
+        if (playerList.Count == 0 && Softlock && !debug)
         {
             WinnerScreen.SetActive(true);
             WinnerText.text = "That was literally frame perfect, HOW. No one Wins";
