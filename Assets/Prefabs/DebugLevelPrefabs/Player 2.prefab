@@ -308,7 +308,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   horizontal: 0
   vertical: 0
-  initialspeed: 125
+  initialspeed: 115
   speed: 125
   smoothtime: 0.1
   dashDuration: 5
