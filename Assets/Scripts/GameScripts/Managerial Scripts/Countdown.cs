@@ -47,7 +47,7 @@ public class Countdown : MonoBehaviour
         }
         else
         {
-            SpawnerPowerUp.SpawnPowerUpTimerBool = false;
+            //SpawnerPowerUp.SpawnPowerUpTimerBool = false;
             isCountingDown = false;
             
         }

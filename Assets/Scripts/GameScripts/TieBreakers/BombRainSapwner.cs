@@ -10,6 +10,7 @@ public class BombRainSapwner : MonoBehaviour
     public GameObject bombPrefab;
     private float time;
     void Start(){
+        SpawnerPowerUp.SpawnPowerUpTimerBool = false;
         time = 2;
         StartCoroutine(BombSpawnTime());
     }

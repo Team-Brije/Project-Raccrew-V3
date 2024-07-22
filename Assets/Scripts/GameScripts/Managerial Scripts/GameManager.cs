@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public static PlayerMovement Player2;
     public static PlayerMovement Player3;
     public static PlayerMovement Player4;
+    public static bool DirtCap = true;
     // --- GAME VARIABLES --- 
     public static float MaxDirtPercentage = 2;
     public static int GameTimer = 60;
@@ -224,36 +225,52 @@ public class GameManager : MonoBehaviour
         {
             DirtP1 += percentage;
 
-            if (DirtP1 >= MaxDirtPercentage)
+            if (DirtP1 >= MaxDirtPercentage && DirtCap)
             {
                 DirtP1 = MaxDirtPercentage;
+            }
+            else if (!DirtCap)
+            {
+                DirtP1 *= 2;
             }
         }
         if (num == 2)
         {
             DirtP2 += percentage;
 
-            if (DirtP2 >= MaxDirtPercentage)
+            if (DirtP2 >= MaxDirtPercentage && DirtCap)
             {
                 DirtP2 = MaxDirtPercentage;
+            }
+            else if (!DirtCap)
+            {
+                DirtP2 *= 2;
             }
         }
         if (num == 3)
         {
             DirtP3 += percentage;
 
-            if (DirtP3 >= MaxDirtPercentage)
+            if (DirtP3 >= MaxDirtPercentage && DirtCap)
             {
                 DirtP3 = MaxDirtPercentage;
+            }
+            else if (!DirtCap)
+            {
+                DirtP3 *= 2;
             }
         }
         if (num == 4)
         {
             DirtP4 += percentage;
 
-            if (DirtP4 >= MaxDirtPercentage)
+            if (DirtP4 >= MaxDirtPercentage && DirtCap)
             {
                 DirtP4 = MaxDirtPercentage;
+            }
+            else if (!DirtCap)
+            {
+                DirtP4 *= 2;
             }
         }
     }

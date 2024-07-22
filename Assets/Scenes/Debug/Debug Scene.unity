@@ -195,8 +195,19 @@ PrefabInstance:
     - target: {fileID: 9200022314083163718, guid: badc55db0990c0c40981316caae8cebf,
         type: 3}
       propertyPath: duration
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9200022314083163718, guid: badc55db0990c0c40981316caae8cebf,
+        type: 3}
+      propertyPath: tieBreakersPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200022314083163718, guid: badc55db0990c0c40981316caae8cebf,
+        type: 3}
+      propertyPath: tieBreakersPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3498623002339638511, guid: 51e7474e88f6ef0468650bb8dce6c3c5,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -316,6 +327,11 @@ PrefabInstance:
       propertyPath: Cameras.Array.data[4]
       value: 
       objectReference: {fileID: 800444945}
+    - target: {fileID: 7586590698921024442, guid: da209ee012d80fb4c94568c487392700,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
