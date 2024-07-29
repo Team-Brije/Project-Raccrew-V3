@@ -48,6 +48,8 @@ public class PowerUpSpawn : ScriptableObjPower
             target.GetComponent<PlayerPowerupStorage>().hasobject = false;
             target.GetComponent<PlayerPowerupStorage>().SetObjects(PrefabToSpawn, placeholderPrefab);
             target.GetComponent<PlayerPowerupStorage>().SpawnObject(1);
+
+            
         }
     }
 
