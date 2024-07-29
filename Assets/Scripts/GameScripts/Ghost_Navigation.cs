@@ -12,11 +12,17 @@ public class Ghost_Navigation : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag(playerTag).transform;
         agent = GetComponent<NavMeshAgent>();
+        StartCoroutine("Destroy");
     }
 
     // Update is called once per frame
     void Update()
     {
         agent.destination = player.position;
+    }
+    IEnumerator Destroy()
+    {
+        Destroy(transform.parent.gameObject,10f);
+        yield return new WaitForSeconds(5f);
     }
 }
