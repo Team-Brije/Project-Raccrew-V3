@@ -15,14 +15,18 @@ public class PlayerPowerupStorage : MonoBehaviour
     [HideInInspector] public int ID; //0 = back, 1 = front
     [HideInInspector] public string AnimName;
     [HideInInspector] public bool hasAnim = false;
+    [HideInInspector] public string playerTag;
 
     public Transform objectspawnback;
     public Transform objectspawnfront;
     public DeletePlaceholder delobj0;
     public DeletePlaceholder delobj1;
 
+
+
     private void Start()
     {
+        playerTag = gameObject.tag;
         player = GetComponent<PlayerMovement>();
         //animator = GetComponent<Animator>();
     }
