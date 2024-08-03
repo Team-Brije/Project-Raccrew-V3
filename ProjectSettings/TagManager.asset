@@ -22,6 +22,10 @@ TagManager:
   - Barrier
   - PowerUp
   - BoundaryPU
+  - Player1Cap
+  - Player2Cap
+  - Player3Cap
+  - Player4Cap
   layers:
   - Default
   - TransparentFX
