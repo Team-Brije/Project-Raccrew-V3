@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         if (playerList.Count == 1)
         {
-            Color winnercolor = playerList[0].GetComponent<MeshRenderer>().material.color;
+            Color winnercolor = playerList[0].transform.GetChild(4).GetComponent<MeshRenderer>().material.color;
             string winner = playerList[0].PlayerName;
             WinnerScreen.SetActive(true);
             WinnerText.text = winner + " Wins!";
