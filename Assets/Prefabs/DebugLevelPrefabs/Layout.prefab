@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 3394262520320271891}
   - component: {fileID: 2833420855553808784}
   m_Layer: 0
-  m_Name: Boundary (1)
+  m_Name: Boundary PowerUps
   m_TagString: BoundaryPU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.2, z: 0}
-  m_LocalScale: {x: -64, y: -1.4607314, z: -78.73682}
+  m_LocalScale: {x: 64, y: 1.4607314, z: 78.73682}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2819996289645278558}
@@ -1057,6 +1057,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   timepercentage: 0
   roundOver: 0
+  debug: 0
 --- !u!1001 &2688751026903988444
 PrefabInstance:
   m_ObjectHideFlags: 0

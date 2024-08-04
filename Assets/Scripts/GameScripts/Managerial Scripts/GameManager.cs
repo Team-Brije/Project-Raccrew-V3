@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         roundOver = false;
         InitializeGame();
+        PlayerSelectScript.arePlayersReady = false;
     }
 
     // Update is called once per frame
