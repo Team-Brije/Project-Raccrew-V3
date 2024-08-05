@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     Vector3 positionFunction()
     {
         Vector3 g = new Vector3(0, gravity, 0);
-        return 0.5f * g * t * t + V0 * t + P0;
+        return 1f * g * t * t + V0 * t + P0;
     }
 
     Vector3 velocityFunction()
