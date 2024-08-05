@@ -24,7 +24,9 @@ public class PowerUpSpawn : ScriptableObjPower
         }
         if (type == AbilityType.ComplexSpawnGhost)
         {
+            Debug.Log("TypeSuccessful");
             SetList();
+            Debug.Log("SetSuccessful");
             string playerShooter = target.GetComponent<PlayerPowerupStorage>().playerTag;
             for (int i = 0; i < players.Count; i++)
             {
