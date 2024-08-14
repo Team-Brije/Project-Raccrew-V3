@@ -317,10 +317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a602f246b449a4f908d9216319615d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 60
   timeRemaining: 0
   isCountingDown: 0
   timerText: {fileID: 6300399834664784892}
   tieBreakersPrefabs:
   - {fileID: 3498623002339638511, guid: 51e7474e88f6ef0468650bb8dce6c3c5, type: 3}
+  - {fileID: 4025376819737001455, guid: 706fc8f25e8c7a84b9c2322b5c0e6581, type: 3}
   - {fileID: 6111909240529777897, guid: 80c1501d1c37c5d47918bd7b512256ce, type: 3}
