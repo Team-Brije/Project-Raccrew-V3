@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoints: []
-  minRange: {x: 0, y: 0, z: 0}
-  maxRange: {x: 0, y: 0, z: 0}
-  spawnTime: 0
+  minRange: {x: -16, y: 0, z: 16}
+  maxRange: {x: 16, y: 0, z: -16}
   PowerUps:
   - {fileID: 11400000, guid: 170f71c51037f314787eab54687e1ed5, type: 2}
   - {fileID: 11400000, guid: e761b8fa756fda245bbdb6dff2d79aa9, type: 2}
   - {fileID: 11400000, guid: b7b0911e3f3fa7f4e9a657a6e51671da, type: 2}
   - {fileID: 11400000, guid: 520e0dcda3800e74699b900fcd2244b0, type: 2}
+  - {fileID: 11400000, guid: 3ad42151cc45470499fd145aae52bf00, type: 2}
   powerPrefab: {fileID: 233187523295776709, guid: 605722de1bd7ba548a96c53897fda7b4,
     type: 3}
