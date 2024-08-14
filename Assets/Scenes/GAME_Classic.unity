@@ -1787,26 +1787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 9145766302236615510, guid: bf1766496e3d3844c9283d0f5756d133,
-        type: 3}
-      propertyPath: maxRange.x
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145766302236615510, guid: bf1766496e3d3844c9283d0f5756d133,
-        type: 3}
-      propertyPath: maxRange.z
-      value: -16
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145766302236615510, guid: bf1766496e3d3844c9283d0f5756d133,
-        type: 3}
-      propertyPath: minRange.x
-      value: -16
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145766302236615510, guid: bf1766496e3d3844c9283d0f5756d133,
-        type: 3}
-      propertyPath: minRange.z
-      value: 16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
