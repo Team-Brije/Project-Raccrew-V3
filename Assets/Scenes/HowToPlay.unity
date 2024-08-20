@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HowToPlayLayout
       objectReference: {fileID: 0}
+    - target: {fileID: 2512766571611199096, guid: 2edc7f2fce786544dbc7f51e250eac44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5076204690649573819, guid: 2edc7f2fce786544dbc7f51e250eac44,
         type: 3}
       propertyPath: m_LocalPosition.x
