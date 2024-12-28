@@ -64,7 +64,8 @@ public class GameManager : MonoBehaviour
 
         if (playerList.Count == 1)
         {
-            Color winnercolor = playerList[0].transform.GetChild(4).GetComponent<MeshRenderer>().material.color;
+
+            Color winnercolor = playerList[0].GetComponent<PlayerStatus>().MapacheColor;
             string winner = playerList[0].PlayerName;
             WinnerScreen.SetActive(true);
             WinnerText.text = winner + " Wins!";
@@ -144,7 +145,7 @@ public class GameManager : MonoBehaviour
     public void InitializeGame()
     {
         CleanList();
-        AddPlayers();
+        //AddPlayers();
         Setup();
         ResetVariables();
     }
@@ -153,7 +154,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            player.GetComponent<PlayerMovement>().canDash = true;
+            player.GetComponent<MovementHandler>().canDash = true;
             player.GetComponent<PlayerPowerupStorage>().MassReset();
         }
     }
@@ -304,8 +305,8 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            playerList.Add(player.GetComponent<PlayerStatus>());
-            player.GetComponent<PlayerMovement>().enabled = true;
+            //playerList.Add(player.GetComponent<PlayerStatus>());
+            //player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<PlayerStatus>().isOut = false;
         }
         DirtP1 = 1;

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerPowerupStorage : MonoBehaviour
 {
-    PlayerMovement player;
+    MovementHandler player;
     Animator animator;
     GameObject prefabtospawn;
     GameObject placeholderprefab;
@@ -17,18 +17,36 @@ public class PlayerPowerupStorage : MonoBehaviour
     [HideInInspector] public bool hasAnim = false;
     [HideInInspector] public string playerTag;
 
-    public Transform objectspawnback;
-    public Transform objectspawnfront;
-    public DeletePlaceholder delobj0;
-    public DeletePlaceholder delobj1;
+    Transform objectspawnback;
+    Transform objectspawnfront;
+    DeletePlaceholder delobj0;
+    DeletePlaceholder delobj1;
 
+    public GameObject front;
+    public GameObject back;
 
+    int id;
+
+    private void OnEnable()
+    {
+        InputHandler.OnAbility += Abilty;
+    }
+
+    private void OnDisable()
+    {
+        InputHandler.OnAbility -= Abilty;
+    }
 
     private void Start()
     {
         playerTag = gameObject.tag;
-        player = GetComponent<PlayerMovement>();
+        player = GetComponent<MovementHandler>();
         //animator = GetComponent<Animator>();
+        objectspawnfront = front.transform;
+        objectspawnback = back.transform;
+        delobj0 = back.GetComponent<DeletePlaceholder>();
+        delobj1 = front.GetComponent<DeletePlaceholder>();
+        id = player.playerId;
     }
 
     public void StartAnim(string name)
@@ -136,9 +154,9 @@ public class PlayerPowerupStorage : MonoBehaviour
         hasobject = false;
     }
 
-    public void UseObject(InputAction.CallbackContext context)
+    public void UseObject()
     {
-        if(context.performed && hasobject)
+        if(hasobject)
         {
             SpawnTrueObject();
             if(ID == 0)
@@ -152,13 +170,19 @@ public class PlayerPowerupStorage : MonoBehaviour
         }
     }
 
-    public void PlayAnim(InputAction.CallbackContext context)
+    public void PlayAnim()
     {
-        if (context.performed && hasAnim)
+        if (hasAnim)
         {
             animator.Play(AnimName);
             hasAnim = false;
         }
+    }
+
+    public void Abilty(int id)
+    {
+        UseObject();
+        PlayAnim();
     }
 
 }
