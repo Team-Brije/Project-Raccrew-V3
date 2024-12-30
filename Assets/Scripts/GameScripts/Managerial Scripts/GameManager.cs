@@ -28,10 +28,14 @@ public class GameManager : MonoBehaviour
     public static float DirtP4;
     [HideInInspector] public bool roundOver = false;
     public bool debug = false;
-    public static PlayerMovement Player1;
-    public static PlayerMovement Player2;
-    public static PlayerMovement Player3;
-    public static PlayerMovement Player4;
+    public static MovementHandler Player1;
+    public static MovementHandler Player2;
+    public static MovementHandler Player3;
+    public static MovementHandler Player4;
+    public static RumbleHandler RumblePlayer1;
+    public static RumbleHandler RumblePlayer2;
+    public static RumbleHandler RumblePlayer3;
+    public static RumbleHandler RumblePlayer4;
     public static bool DirtCap = true;
     // --- GAME VARIABLES --- 
     public static float MaxDirtPercentage = 2;
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviour
     public static float SpawnFrequency = 7;
     public static bool CanSpawnPowerUps = true;
     public static bool CanRumble = true;
+
+    public static event Action<int> OnRumble;
+    public static event Action<int,float> OnStun;
 
 
     // Start is called before the first frame update
@@ -202,22 +209,26 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player1"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player1"));
-            Player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerMovement>();
+            Player1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<MovementHandler>();
+            //RumblePlayer1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<RumbleHandler>();
         }
         if (GameObject.FindGameObjectWithTag("Player2"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player2"));
-            Player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerMovement>();
+            Player2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<MovementHandler>();
+            //RumblePlayer2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<RumbleHandler>();
         }
         if (GameObject.FindGameObjectWithTag("Player3"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player3"));
-            Player3 = GameObject.FindGameObjectWithTag("Player3").GetComponent<PlayerMovement>();
+            Player3 = GameObject.FindGameObjectWithTag("Player3").GetComponent<MovementHandler>();
+            //RumblePlayer3 = GameObject.FindGameObjectWithTag("Player3").GetComponent<RumbleHandler>();
         }
         if (GameObject.FindGameObjectWithTag("Player4"))
         {
             players.Add(GameObject.FindGameObjectWithTag("Player4"));
-            Player4 = GameObject.FindGameObjectWithTag("Player4").GetComponent<PlayerMovement>();
+            Player4 = GameObject.FindGameObjectWithTag("Player4").GetComponent<MovementHandler>();
+            //RumblePlayer4 = GameObject.FindGameObjectWithTag("Player4").GetComponent<RumbleHandler>();
         }
     }
     
@@ -285,19 +296,27 @@ public class GameManager : MonoBehaviour
         }
         if (num == 1)
         {
-            Player1.EnableStun(stuntime);
+            OnStun?.Invoke(0,stuntime);
+            //Player1.EnableStun(stuntime);
+            OnRumble?.Invoke(0);
         }
         if (num == 2)
         {
-            Player2.EnableStun(stuntime);
+            OnStun?.Invoke(1, stuntime);
+            //Player2.EnableStun(stuntime);
+            OnRumble?.Invoke(1);
         }
         if (num == 3)
         {
-            Player3.EnableStun(stuntime);
+            OnStun?.Invoke(2, stuntime);
+            //Player3.EnableStun(stuntime);
+            OnRumble?.Invoke(2);
         }
         if (num == 4)
         {
-            Player4.EnableStun(stuntime);
+            OnStun?.Invoke(3, stuntime);
+            //Player4.EnableStun(stuntime);
+            OnRumble?.Invoke(3);
         }
     }
 
@@ -306,7 +325,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject player in players)
         {
             //playerList.Add(player.GetComponent<PlayerStatus>());
-            //player.GetComponent<PlayerMovement>().enabled = true;
+            //player.GetComponent<MovementHandler>().enabled = true;
             player.GetComponent<PlayerStatus>().isOut = false;
         }
         DirtP1 = 1;

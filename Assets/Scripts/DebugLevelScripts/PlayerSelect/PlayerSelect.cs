@@ -39,12 +39,16 @@ public class PlayerSelect : MonoBehaviour
             case 1:
                 player = GameObject.FindGameObjectWithTag("Player1Cap");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
+                ColorManagerSingleton.Instance.colorP1 = playerSkin.targetMaterial.color;
+                ColorManagerSingleton.Instance.materialP1 = playerSkin.targetMaterial;
                 //playerUI = GameObject.FindGameObjectWithTag("PlayerUI1");
                 //playerUI.SetActive(false);
                 break;
             case 2:
                 player = GameObject.FindGameObjectWithTag("Player2Cap");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
+                ColorManagerSingleton.Instance.colorP2 = playerSkin.targetMaterial.color;
+                ColorManagerSingleton.Instance.materialP2 = playerSkin.targetMaterial;
                 //playerUI = GameObject.FindGameObjectWithTag("PlayerUI2");
                 PlayerSelectScript.arePlayersReady = true;
                 //playerUI.SetActive(false);
@@ -52,6 +56,8 @@ public class PlayerSelect : MonoBehaviour
             case 3:
                 player = GameObject.FindGameObjectWithTag("Player3Cap");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
+                ColorManagerSingleton.Instance.colorP3 = playerSkin.targetMaterial.color;
+                ColorManagerSingleton.Instance.materialP3 = playerSkin.targetMaterial;
                 //playerUI = GameObject.FindGameObjectWithTag("PlayerUI3");
                 PlayerSelectScript.arePlayersReady = true;
                 //playerUI.SetActive(false);
@@ -59,6 +65,8 @@ public class PlayerSelect : MonoBehaviour
             case 4:
                 player = GameObject.FindGameObjectWithTag("Player4Cap");
                 player.GetComponent<MeshRenderer>().material = playerSkin.targetMaterial;
+                ColorManagerSingleton.Instance.colorP4 = playerSkin.targetMaterial.color;
+                ColorManagerSingleton.Instance.materialP4 = playerSkin.targetMaterial;
                 //playerUI = GameObject.FindGameObjectWithTag("PlayerUI4");
                 PlayerSelectScript.arePlayersReady = true;
                 //playerUI.SetActive(false);

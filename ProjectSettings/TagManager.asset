@@ -30,6 +30,7 @@ TagManager:
   - PlayerHandler2
   - PlayerHandler3
   - PlayerHandler4
+  - ColorManager
   layers:
   - Default
   - TransparentFX

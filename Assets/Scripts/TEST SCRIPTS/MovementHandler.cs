@@ -54,12 +54,14 @@ public class MovementHandler : MonoBehaviour
     {
         InputHandler.OnMove += Move;
         InputHandler.OnDash += Dash;
+        GameManager.OnStun += EnableStun;
     }
 
     private void OnDisable()
     {
         InputHandler.OnMove -= Move;
         InputHandler.OnDash -= Dash;
+        GameManager.OnStun -= EnableStun;
     }
 
     void FixedUpdate()
@@ -129,5 +131,26 @@ public class MovementHandler : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         //initialspeed = startspeed;
         canDash = true;
+    }
+
+    public void EnableStun(int idplayer,float time)
+    {
+        if (!IFrames && idplayer == playerId)
+        {
+            StartCoroutine(Stun(time));
+            StartCoroutine(IFramesCooldown(IFrameDuration));
+        }
+    }
+
+    IEnumerator IFramesCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    IEnumerator Stun(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
     }
 }

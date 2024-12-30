@@ -9,6 +9,7 @@ public class PlayerStatus : MonoBehaviour
     public string PlayerName;
     public Color MapacheColor;
     public GameManager gameManager;
+    int id;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Boundary")
@@ -23,6 +24,22 @@ public class PlayerStatus : MonoBehaviour
     {
         movement = GetComponent<MovementHandler>();
         gameManager.playerList.Add(this);
+        id = movement.playerId;
+        switch (id)
+        {
+            case 0:
+                MapacheColor = ColorManagerSingleton.Instance.colorP1;
+                break;
+            case 1:
+                MapacheColor = ColorManagerSingleton.Instance.colorP2;
+                break;
+            case 2:
+                MapacheColor = ColorManagerSingleton.Instance.colorP3;
+                break;
+            case 3:
+                MapacheColor = ColorManagerSingleton.Instance.colorP4;
+                break;
+        }
     }
 
     private void OnEnable()
