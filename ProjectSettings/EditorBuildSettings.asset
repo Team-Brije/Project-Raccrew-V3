@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GAME_Classic.unity
     guid: bf7e4eae622e7e24db35b0554a731db3
   - enabled: 1
+    path: Assets/Scenes/GameSelect.unity
+    guid: 925d38abe9468f448a581c03b54e56ad
+  - enabled: 1
     path: Assets/Scenes/Debug/Debug Scene.unity
     guid: 542f947a99f0457439ec69148313ab19
   - enabled: 1
