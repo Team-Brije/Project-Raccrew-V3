@@ -1,25 +1,21 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR.Haptics;
-using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class MovementHandler : MonoBehaviour
 {
-    public Rigidbody rb;
+    public int playerId;
+    float horizontal, vertical;
+
+    Rigidbody rb;
 
     [HideInInspector] public Transform cam;
 
-    [HideInInspector] public float horizontal;
-    [HideInInspector] public float vertical;
-
     public float initialspeed;
-    [HideInInspector]public float speed;
+    [HideInInspector] public float speed;
     private float scalingspeed;
-    private PlayerInput playerInput;
-    Gamepad gamepad;
 
     public float smoothtime = 0.1f;
     float turnSmoothVelocity;
@@ -28,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity; //the velocity vector of the gameobject
     private Vector3 yAxis; //the y axis vector
     private Vector3 movedir;
+
+    public bool isMoving;
 
     [Header("Dash Parameters")]
 
@@ -43,18 +41,29 @@ public class PlayerMovement : MonoBehaviour
 
     public float IFrameDuration = 2;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        gamepad = playerInput.GetDevice<Gamepad>();
+        rb = GetComponent<Rigidbody>();
         previousPosition = transform.position; //initialize the previous position
         yAxis = new Vector3(0, 1, 0); //initialize the y axis vector
         speed = initialspeed;
-        Debug.Log(playerInput.user.id);
     }
 
-    // Update is called once per frame
+
+    private void OnEnable()
+    {
+        InputHandler.OnMove += Move;
+        InputHandler.OnDash += Dash;
+        GameManager.OnStun += EnableStun;
+    }
+
+    private void OnDisable()
+    {
+        InputHandler.OnMove -= Move;
+        InputHandler.OnDash -= Dash;
+        GameManager.OnStun -= EnableStun;
+    }
+
     void FixedUpdate()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
@@ -73,69 +82,42 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = movedir.normalized * speed;
                 rb.velocity = new Vector3(rb.velocity.x, -9.8f, rb.velocity.z);
                 */
-                rb.AddForce(movedir.normalized*initialspeed,ForceMode.Force);
-          
+                rb.AddForce(movedir.normalized * initialspeed, ForceMode.Force);
+
             }
         }
     }
 
-    public void Move(InputAction.CallbackContext context)
-    {
-        horizontal = context.ReadValue<Vector2>().x;
-        vertical = context.ReadValue<Vector2>().y;
-    }
-
     private void Update()
     {
+        if (horizontal == 0 && vertical == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
     }
 
-    public void Dash(InputAction.CallbackContext context)
+
+    public void Move(int id, float horizontal1, float vertical1)
     {
-        if(context.performed && canDash)
+        if (id == playerId)
+        {
+            //Debug.Log("Player id is "+id);
+            //Debug.Log("Player " +id+ " horizontal value "+horizontal1);
+            //Debug.Log("Player " +id+ " vertical value " + vertical1);
+            horizontal = horizontal1;
+            vertical = vertical1;
+        }
+    }
+
+    public void Dash(int id)
+    {
+        if(canDash && isMoving)
         {
             StartCoroutine(Dashing());
-        }
-    }
-
-    public void EnableStun(float time)
-    {
-        if (!IFrames)
-        {
-            StartCoroutine(Stun(time));
-            StartCoroutine(IFramesCooldown(IFrameDuration));
-        }
-    }
-
-    IEnumerator IFramesCooldown(float time)
-    {
-        yield return new WaitForSeconds(time);
-    }
-
-    IEnumerator Stun(float time)
-    {
-        if (gamepad != null && GameManager.CanRumble)
-        {
-            gamepad.SetMotorSpeeds(0.5f, 1f);
-            Invoke(nameof(StopRumble), 0.5f);
-        }
-        canMove = false;
-        yield return new WaitForSeconds(time);
-        canMove = true;
-    }
-
-    public void StopRumble()
-    {
-        if (gamepad != null)
-        {
-            gamepad.SetMotorSpeeds(0, 0);
-        }
-    }
-
-    public void StartGame(InputAction.CallbackContext context)
-    {
-        if(PlayerSelectScript.arePlayersReady && context.performed)
-        {
-            SceneManager.LoadScene("Loading");
         }
     }
 
@@ -149,5 +131,26 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         //initialspeed = startspeed;
         canDash = true;
+    }
+
+    public void EnableStun(int idplayer,float time)
+    {
+        if (!IFrames && idplayer == playerId)
+        {
+            StartCoroutine(Stun(time));
+            StartCoroutine(IFramesCooldown(IFrameDuration));
+        }
+    }
+
+    IEnumerator IFramesCooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    IEnumerator Stun(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
     }
 }

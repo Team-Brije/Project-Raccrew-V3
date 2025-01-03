@@ -24,37 +24,37 @@ public class PlayerSelectScript : MonoBehaviour
     {
         arePlayersReady = false;
         NumOfPlayers = 0;
+        InputManager.playerPrefab.tag = "PlayerHandler1";
     }
     public void EnableUI()
     {
-        Debug.Log("Gaming");
         UIElements[id].SetActive(true);
         id++;
+        if (id == 1)
+        {
+            InputManager.playerPrefab.tag = "PlayerHandler2";
+            PlayerUI[0].SetActive(false);
+            NumOfPlayers++;
+        }
         if (id == 2)
         {
-            InputManager.playerPrefab = player2;
-            PlayerUI[0].SetActive(false);
+            arePlayersReady = false;
+            InputManager.playerPrefab.tag = "PlayerHandler3";
+            PlayerUI[1].SetActive(false);
+            NumOfPlayers++;
+        }
+        if (id == 3)
+        {
+            arePlayersReady = false;
+            PlayerUI[2].SetActive(false);
+            InputManager.playerPrefab.tag = "PlayerHandler4";
             NumOfPlayers++;
         }
         if (id == 4)
         {
             arePlayersReady = false;
-            InputManager.playerPrefab = player3;
-            PlayerUI[1].SetActive(false);
-            NumOfPlayers++;
-        }
-        if (id == 6)
-        {
-            arePlayersReady = false;
-            PlayerUI[2].SetActive(false);
-            InputManager.playerPrefab = player4;
-            NumOfPlayers++;
-        }
-        if (id == 8)
-        {
-            arePlayersReady = false;
             PlayerUI[3].SetActive(false);
-            InputManager.playerPrefab = player4;
+            //InputManager.playerPrefab = player4;
             NumOfPlayers++;
         }
 

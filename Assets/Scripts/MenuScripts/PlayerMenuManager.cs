@@ -5,7 +5,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMenuManager : MonoBehaviour
 {
-    public GameObject[] gameObjects;
+    public List<GameObject> gameObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,28 @@ public class PlayerMenuManager : MonoBehaviour
         GameManager.RoundsWonP3 = 0;
         GameManager.RoundsWonP4 = 0;
 
-        if (GameObject.FindGameObjectWithTag("PlayerHolder"))
+        if (GameObject.FindGameObjectWithTag("PlayerHandler1"))
         {
-            gameObjects = GameObject.FindGameObjectsWithTag("PlayerHolder");
+            gameObjects.Add(GameObject.FindGameObjectWithTag("PlayerHandler1"));
+
+        }
+
+        if (GameObject.FindGameObjectWithTag("PlayerHandler2"))
+        {
+            gameObjects.Add(GameObject.FindGameObjectWithTag("PlayerHandler2"));
+
+        }
+
+        if (GameObject.FindGameObjectWithTag("PlayerHandler3"))
+        {
+            gameObjects.Add(GameObject.FindGameObjectWithTag("PlayerHandler3"));
+
+        }
+
+        if (GameObject.FindGameObjectWithTag("PlayerHandler4"))
+        {
+            gameObjects.Add(GameObject.FindGameObjectWithTag("PlayerHandler4"));
+
         }
 
         foreach (GameObject gameObject in gameObjects)
