@@ -113,9 +113,9 @@ public class MovementHandler : MonoBehaviour
         }
     }
 
-    public void Dash(int id)
+    public void Dash(int idhandler)
     {
-        if(canDash && isMoving)
+        if(canDash && isMoving && idhandler == playerId)
         {
             StartCoroutine(Dashing());
         }

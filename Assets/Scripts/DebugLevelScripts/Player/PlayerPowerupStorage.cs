@@ -179,10 +179,13 @@ public class PlayerPowerupStorage : MonoBehaviour
         }
     }
 
-    public void Abilty(int id)
+    public void Abilty(int idhandler)
     {
-        UseObject();
-        PlayAnim();
+        if (id == idhandler)
+        {
+            UseObject();
+            PlayAnim();
+        }
     }
 
 }

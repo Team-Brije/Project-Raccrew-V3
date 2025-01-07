@@ -55,8 +55,8 @@ public class MenuBehaviour : MonoBehaviour
 
         if (players != null)
         {
-            dashSpeed.text = players[0].GetComponent<PlayerMovement>().dashPercentageBoost.ToString();
-            speed.text = players[0].GetComponent<PlayerMovement>().initialspeed.ToString();
+            dashSpeed.text = players[0].GetComponent<MovementHandler>().dashPercentageBoost.ToString();
+            speed.text = players[0].GetComponent<MovementHandler>().initialspeed.ToString();
         }
     }   
 
@@ -102,7 +102,7 @@ public class MenuBehaviour : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            player.GetComponent<PlayerMovement>().dashPercentageBoost += .1f;
+            player.GetComponent<MovementHandler>().dashPercentageBoost += .1f;
         }
     }
 
@@ -110,7 +110,7 @@ public class MenuBehaviour : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            player.GetComponent<PlayerMovement>().dashPercentageBoost -= .1f;
+            player.GetComponent<MovementHandler>().dashPercentageBoost -= .1f;
         }
     }
 
@@ -118,7 +118,7 @@ public class MenuBehaviour : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            player.GetComponent<PlayerMovement>().initialspeed += 10f;
+            player.GetComponent<MovementHandler>().initialspeed += 10f;
         }
     }
 
@@ -135,7 +135,7 @@ public class MenuBehaviour : MonoBehaviour
     {
         foreach (GameObject player in players)
         {
-            player.GetComponent<PlayerMovement>().initialspeed -= 10f;
+            player.GetComponent<MovementHandler>().initialspeed -= 10f;
         }
     }
 

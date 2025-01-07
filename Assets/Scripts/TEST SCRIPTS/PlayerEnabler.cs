@@ -13,10 +13,4 @@ public class PlayerEnabler : MonoBehaviour
             players[i].SetActive(true);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

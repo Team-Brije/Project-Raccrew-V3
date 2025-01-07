@@ -1014,6 +1014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5244424545220044508}
   - component: {fileID: 1269382054592469389}
+  - component: {fileID: 2726662442889182276}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1061,6 +1062,22 @@ MonoBehaviour:
   timepercentage: 0
   roundOver: 0
   debug: 1
+--- !u!114 &2726662442889182276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9219057113490841308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c486bebd83e164b87f8b41b24fa24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirtPlayer1: {fileID: 2100000, guid: d99a58b5ee22cd34b8c56312559c0984, type: 2}
+  DirtPlayer2: {fileID: 2100000, guid: bc546a0760c61f341a0744fe46f9d8b6, type: 2}
+  DirtPlayer3: {fileID: 2100000, guid: c345670f802d15a4f98ca1c111721150, type: 2}
+  DirtPlayer4: {fileID: 2100000, guid: b4bcb388d1728d746a0496d1bdd1e86f, type: 2}
 --- !u!1001 &2688751026903988444
 PrefabInstance:
   m_ObjectHideFlags: 0

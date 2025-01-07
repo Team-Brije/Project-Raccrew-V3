@@ -680,6 +680,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2726662442889182276, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
+        type: 3}
+      propertyPath: DirtPlayer1
+      value: 
+      objectReference: {fileID: 2100000, guid: d99a58b5ee22cd34b8c56312559c0984, type: 2}
+    - target: {fileID: 2726662442889182276, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
+        type: 3}
+      propertyPath: DirtPlayer2
+      value: 
+      objectReference: {fileID: 2100000, guid: bc546a0760c61f341a0744fe46f9d8b6, type: 2}
+    - target: {fileID: 2726662442889182276, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
+        type: 3}
+      propertyPath: DirtPlayer3
+      value: 
+      objectReference: {fileID: 2100000, guid: c345670f802d15a4f98ca1c111721150, type: 2}
+    - target: {fileID: 2726662442889182276, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
+        type: 3}
+      propertyPath: DirtPlayer4
+      value: 
+      objectReference: {fileID: 2100000, guid: b4bcb388d1728d746a0496d1bdd1e86f, type: 2}
     - target: {fileID: 2819996289645278558, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
         type: 3}
       propertyPath: m_LocalPosition.x
