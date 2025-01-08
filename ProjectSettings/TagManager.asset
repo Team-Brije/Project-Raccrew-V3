@@ -31,6 +31,8 @@ TagManager:
   - PlayerHandler3
   - PlayerHandler4
   - ColorManager
+  - GoldBullet
+  - GBBarrier
   layers:
   - Default
   - TransparentFX

@@ -10,13 +10,23 @@ public class PlayerStatus : MonoBehaviour
     public Color MapacheColor;
     public GameManager gameManager;
     int id;
+    public Transform playerpos;
+    public GameObject confetti;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Boundary")
         {
-            Debug.Log("Skill Issue");
+            //Debug.Log("Skill Issue");
             isOut = true;
             movement.enabled = false;
+        }
+        if (other.tag == "GoldBullet")
+        {
+            //Debug.Log("Skill Issue");
+            isOut = true;
+            movement.enabled = false;
+            Instantiate(confetti,playerpos.position,confetti.transform.rotation);
+            this.gameObject.SetActive(false);
         }
     }
 
