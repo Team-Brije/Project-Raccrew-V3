@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class ExplosionThumper : MonoBehaviour
 {
     public float ExplosionForce;
     public float FloorUpwardsForce;
     public float Time;
     public float DirtPercentage;
     public float StunTime;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,7 @@ public class Explosion : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnColliderStay(Collider other)
     { 
         if (other.gameObject.tag == "Player1")
         {
@@ -46,7 +45,7 @@ public class Explosion : MonoBehaviour
     }
 
 
-    private void OnTriggerExit(Collider other)
+    private void OnColliderExit(Collider other)
     {
         if (other.gameObject.tag == "Player1")
         {
