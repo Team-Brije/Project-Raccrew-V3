@@ -18,7 +18,7 @@ public class GoldBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Barrier"))
+        if (other.CompareTag("GBBarrier"))
         {
             Debug.Log("Trigger Detected!");
 

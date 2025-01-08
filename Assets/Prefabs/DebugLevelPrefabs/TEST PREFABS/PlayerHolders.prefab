@@ -334,6 +334,9 @@ MonoBehaviour:
   PlayerName: Player 2
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
   gameManager: {fileID: 0}
+  playerpos: {fileID: 1326773594393605267}
+  confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
+    type: 3}
 --- !u!114 &4081271857854813486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +511,9 @@ MonoBehaviour:
   PlayerName: Player 3
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
   gameManager: {fileID: 0}
+  playerpos: {fileID: 3741097559316602080}
+  confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
+    type: 3}
 --- !u!114 &2474625087922224769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +934,9 @@ MonoBehaviour:
   PlayerName: Player 1
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
   gameManager: {fileID: 0}
+  playerpos: {fileID: 7331345437857444838}
+  confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
+    type: 3}
 --- !u!114 &7973147396869207313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,6 +1844,9 @@ MonoBehaviour:
   PlayerName: Player 4
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
   gameManager: {fileID: 0}
+  playerpos: {fileID: 175027254741707668}
+  confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
+    type: 3}
 --- !u!114 &7285086229904348541
 MonoBehaviour:
   m_ObjectHideFlags: 0
