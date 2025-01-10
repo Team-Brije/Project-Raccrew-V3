@@ -45,7 +45,7 @@ public class ObjectMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,1,0,Space.World);
+        transform.Rotate(0,0.5f,0,Space.World);
     }
 
     public void MoveLeft(int id)
