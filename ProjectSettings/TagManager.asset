@@ -33,6 +33,7 @@ TagManager:
   - ColorManager
   - GoldBullet
   - GBBarrier
+  - Selector
   layers:
   - Default
   - TransparentFX

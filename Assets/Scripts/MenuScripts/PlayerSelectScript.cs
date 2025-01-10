@@ -12,7 +12,7 @@ public class PlayerSelectScript : MonoBehaviour
     public GameObject player2;
     public GameObject player3;
     public GameObject player4;
-    public GameObject[] UIElements;
+    //public GameObject[] UIElements;
     public int id = 0;
     public GameObject SpawnPlatform;
     public GameObject[] PlayerUI;
@@ -28,7 +28,7 @@ public class PlayerSelectScript : MonoBehaviour
     }
     public void EnableUI()
     {
-        UIElements[id].SetActive(true);
+        //UIElements[id].SetActive(true);
         id++;
         if (id == 1)
         {
