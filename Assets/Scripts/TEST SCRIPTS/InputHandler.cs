@@ -12,6 +12,11 @@ public class InputHandler : MonoBehaviour
     public static event Action<int> OnAbility;
     public static event Action<int> OnShove;
     public static event Action<int> OnStart;
+    public static event Action<int, bool> OnConfirm;
+    public static event Action<int> OnUp;
+    public static event Action<int> OnDown;
+    public static event Action<int> OnLeft;
+    public static event Action<int> OnRight;
 
     [HideInInspector] public float horizontal;
     [HideInInspector] public float vertical;
@@ -63,6 +68,50 @@ public class InputHandler : MonoBehaviour
         if (context.performed && PlayerSelectScript.arePlayersReady)
         {
             OnStart?.Invoke(id);
+        }
+    }
+
+    public void Confirm(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            OnConfirm?.Invoke(id, true);
+        }
+        else if (context.canceled)
+        {
+            OnConfirm?.Invoke(id, false);
+        }
+    }
+
+    public void Up(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnUp?.Invoke(id);
+        }
+    }
+
+    public void Down(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnDown?.Invoke(id);
+        }
+    }
+
+    public void Left(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnLeft?.Invoke(id);
+        }
+    }
+
+    public void Right(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnRight?.Invoke(id);
         }
     }
 
