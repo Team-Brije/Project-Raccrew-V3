@@ -49,6 +49,7 @@ public class CharacterSelectItemStorage : MonoBehaviour
                 break;
             case ObjectType.color:
                 mesh.material.color = colorOptions[arrnum].targetMaterial.color;
+                color = colorOptions[arrnum].targetMaterial.color;
                 material = colorOptions[arrnum].targetMaterial;
                 break;
         }
