@@ -19,6 +19,8 @@ public class PlayerPowerupStorage : MonoBehaviour
 
     Transform objectspawnback;
     Transform objectspawnfront;
+    
+
     DeletePlaceholder delobj0;
     DeletePlaceholder delobj1;
 
@@ -188,4 +190,17 @@ public class PlayerPowerupStorage : MonoBehaviour
         }
     }
 
+    public void ChangePosition(GameObject playerPos, int duration)
+    {
+        StartCoroutine(MeteorTime(duration, playerPos));
+        
+    }
+    public IEnumerator MeteorTime(int duration, GameObject playerPos)
+    {
+        player.transform.position = playerPos.transform.position;
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        yield return new WaitForSeconds(duration);
+        rb.useGravity = true;
+    }
 }
