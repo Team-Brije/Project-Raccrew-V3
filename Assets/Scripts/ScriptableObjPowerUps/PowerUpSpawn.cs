@@ -7,7 +7,7 @@ public class PowerUpSpawn : ScriptableObjPower
 {
     public GameObject PrefabToSpawn;
     public GameObject placeholderPrefab;
-    public enum AbilityType { StandardSpawn, ComplexSpawnGhost}
+    public enum AbilityType { StandardSpawn, ComplexSpawnGhost, StardardSpawnFront}
     public AbilityType type;
 
     public static List<string> players = new List<string>();
@@ -18,6 +18,14 @@ public class PowerUpSpawn : ScriptableObjPower
         {
             target.GetComponent<PlayerPowerupStorage>().ResetAnims();
             target.GetComponent<PlayerPowerupStorage>().ID = 0;
+            target.GetComponent<PlayerPowerupStorage>().hasobject = false;
+            target.GetComponent<PlayerPowerupStorage>().SetObjects(PrefabToSpawn, placeholderPrefab);
+            target.GetComponent<PlayerPowerupStorage>().SpawnObject(1);
+        }
+        if (type == AbilityType.StardardSpawnFront)
+        {
+            target.GetComponent<PlayerPowerupStorage>().ResetAnims();
+            target.GetComponent<PlayerPowerupStorage>().ID = 1;
             target.GetComponent<PlayerPowerupStorage>().hasobject = false;
             target.GetComponent<PlayerPowerupStorage>().SetObjects(PrefabToSpawn, placeholderPrefab);
             target.GetComponent<PlayerPowerupStorage>().SpawnObject(1);
