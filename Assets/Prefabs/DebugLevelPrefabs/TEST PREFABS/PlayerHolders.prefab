@@ -421,13 +421,14 @@ GameObject:
   - component: {fileID: 3715794311593626385}
   - component: {fileID: 7339765809462265839}
   - component: {fileID: 2684288184156370406}
+  - component: {fileID: 400816573979597943}
   m_Layer: 0
   m_Name: Player2Listener
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1326773594393605267
 Transform:
   m_ObjectHideFlags: 0
@@ -596,10 +597,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  AnimName: 
   isShoving: 0
   isMoving: 0
   stunTime: 0.7
   shoveCollider: {fileID: 7451359280886201929}
+  animator: {fileID: 0}
+  ShoveCooldown: 2
+--- !u!95 &400816573979597943
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352230109770081505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f2941936dd348489b2707bf4af95a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1731766279201620063
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,13 +642,14 @@ GameObject:
   - component: {fileID: 6304930318608546023}
   - component: {fileID: 7568685571111706851}
   - component: {fileID: 4359389634513547894}
+  - component: {fileID: 6655389591012130525}
   m_Layer: 0
   m_Name: Player3Listener
   m_TagString: Player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3741097559316602080
 Transform:
   m_ObjectHideFlags: 0
@@ -792,10 +818,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  AnimName: 
   isShoving: 0
   isMoving: 0
   stunTime: 0.7
   shoveCollider: {fileID: 3472798618800432153}
+  animator: {fileID: 0}
+  ShoveCooldown: 2
+--- !u!95 &6655389591012130525
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731766279201620063}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f2941936dd348489b2707bf4af95a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2951351360442082811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,13 +1259,14 @@ GameObject:
   - component: {fileID: 6474126279314679990}
   - component: {fileID: 3048563537647354910}
   - component: {fileID: 7125310164395667791}
+  - component: {fileID: 1463265196437626947}
   m_Layer: 0
   m_Name: Player1Listener
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7331345437857444838
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,10 +1435,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  AnimName: 
   isShoving: 0
   isMoving: 0
   stunTime: 0.7
   shoveCollider: {fileID: 4717783540732581162}
+  animator: {fileID: 0}
+  ShoveCooldown: 2
+--- !u!95 &1463265196437626947
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787012843371690066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f2941936dd348489b2707bf4af95a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5611836331212737821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,13 +2513,14 @@ GameObject:
   - component: {fileID: 1720155904596262608}
   - component: {fileID: 5321368492124832020}
   - component: {fileID: 7782615223680870202}
+  - component: {fileID: 4903802131083306460}
   m_Layer: 0
   m_Name: Player4Listener
   m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &175027254741707668
 Transform:
   m_ObjectHideFlags: 0
@@ -2613,10 +2689,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  AnimName: 
   isShoving: 0
   isMoving: 0
   stunTime: 0.7
-  shoveCollider: {fileID: 4132405869332752986}
+  shoveCollider: {fileID: 1279042971730780088}
+  animator: {fileID: 0}
+  ShoveCooldown: 2
+--- !u!95 &4903802131083306460
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760751601824649698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f2941936dd348489b2707bf4af95a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8309476721610581020
 GameObject:
   m_ObjectHideFlags: 0
