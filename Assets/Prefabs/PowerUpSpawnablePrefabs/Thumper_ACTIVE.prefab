@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b026daedd9f7341a9a0ed5ab711752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionForce: 25
+  ExplosionForce: 35
   FloorUpwardsForce: 0
   Time: 0
   DirtPercentage: 0
