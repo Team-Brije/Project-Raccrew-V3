@@ -54,5 +54,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 520e0dcda3800e74699b900fcd2244b0, type: 2}
   - {fileID: 11400000, guid: 3ad42151cc45470499fd145aae52bf00, type: 2}
   - {fileID: 11400000, guid: 11987538ecd21cb429bdd3ea217437f3, type: 2}
+  - {fileID: 11400000, guid: fdbdf9de20ce3a9478036582ffdfc8e2, type: 2}
   powerPrefab: {fileID: 233187523295776709, guid: 605722de1bd7ba548a96c53897fda7b4,
     type: 3}
