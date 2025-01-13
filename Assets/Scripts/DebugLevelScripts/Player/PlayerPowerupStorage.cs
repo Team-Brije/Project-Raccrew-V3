@@ -41,7 +41,7 @@ public class PlayerPowerupStorage : MonoBehaviour
     {
         playerTag = gameObject.tag;
         player = GetComponent<MovementHandler>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         objectspawnfront = front.transform;
         objectspawnback = back.transform;
         delobj0 = back.GetComponent<DeletePlaceholder>();
@@ -51,7 +51,7 @@ public class PlayerPowerupStorage : MonoBehaviour
 
     public void StartAnim(string name)
     {
-        //animator.Play(name);
+        animator.Play(name);
         AnimName = name;
     }
 
