@@ -1877,6 +1877,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157515469125269337, guid: 07d378b4b31eda74ba668dbc056a1212,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1352230109770081505, guid: 07d378b4b31eda74ba668dbc056a1212,
         type: 3}
       propertyPath: m_IsActive
@@ -1897,6 +1902,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHolders
       objectReference: {fileID: 0}
+    - target: {fileID: 3094303045619497169, guid: 07d378b4b31eda74ba668dbc056a1212,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198754746698677907, guid: 07d378b4b31eda74ba668dbc056a1212,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3676868547137710771, guid: 07d378b4b31eda74ba668dbc056a1212,
         type: 3}
       propertyPath: gameManager
@@ -1910,6 +1925,11 @@ PrefabInstance:
     - target: {fileID: 4787012843371690066, guid: 07d378b4b31eda74ba668dbc056a1212,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296757357873500473, guid: 07d378b4b31eda74ba668dbc056a1212,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7411267520949024902, guid: 07d378b4b31eda74ba668dbc056a1212,
