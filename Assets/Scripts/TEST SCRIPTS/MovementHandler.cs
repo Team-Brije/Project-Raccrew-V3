@@ -8,7 +8,7 @@ public class MovementHandler : MonoBehaviour
 
     Rigidbody rb;
 
-    [HideInInspector] public Transform cam;
+    /*[HideInInspector]*/ public Transform cam;
 
     public float initialspeed;
     [HideInInspector] public float speed;
