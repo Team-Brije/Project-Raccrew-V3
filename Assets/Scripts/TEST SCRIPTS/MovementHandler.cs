@@ -44,6 +44,7 @@ public class MovementHandler : MonoBehaviour
         previousPosition = transform.position; //initialize the previous position
         yAxis = new Vector3(0, 1, 0); //initialize the y axis vector
         speed = initialspeed;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
     }
 
 
@@ -63,7 +64,7 @@ public class MovementHandler : MonoBehaviour
 
     void FixedUpdate()
     {
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        //cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
         velocity = transform.position - previousPosition; //calculate the velocity vector
         previousPosition = transform.position; //update the previous position
         if (canMove)
