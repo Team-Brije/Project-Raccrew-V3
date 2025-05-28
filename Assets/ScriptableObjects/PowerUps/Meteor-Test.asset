@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529bfe2c0e782cf4eb17c1c63a7b687d, type: 3}
   m_Name: Meteor-Test
   m_EditorClassIdentifier: 
-  img: {fileID: 21300000, guid: 0f6b38774c8088f4fb8d20082d10c029, type: 3}
+  img: {fileID: 21300000, guid: 854ac94ff8bbde249ae35c8e6daaf052, type: 3}
   newPlayerPos: {fileID: 3835079676779409543, guid: 59ab5ba399f27cc4e8750a1e4e7a523f,
     type: 3}
   duration: 5
