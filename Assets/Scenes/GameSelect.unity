@@ -177,7 +177,7 @@ MonoBehaviour:
   - 4.5
   - 7
   movementHandler: {fileID: 1445997955}
-  playerUI: {fileID: 1021285402}
+  playerUI: {fileID: 2692967322297523352}
   characterselectUI: {fileID: 1250092560}
   image: {fileID: 1969726951}
   itemStorages:
@@ -4421,7 +4421,7 @@ MonoBehaviour:
   - 4.5
   - 7
   movementHandler: {fileID: 1445997955}
-  playerUI: {fileID: 1021285402}
+  playerUI: {fileID: 2692967322297523353}
   characterselectUI: {fileID: 1874539952}
   image: {fileID: 790330169}
   itemStorages:
@@ -13078,6 +13078,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc22840dfcaaf1941b89fcb8300e567c, type: 3}
+--- !u!1 &2692967322297523352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6042461536198179498, guid: dc22840dfcaaf1941b89fcb8300e567c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2692967322297523351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2692967322297523353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6906889760193303746, guid: dc22840dfcaaf1941b89fcb8300e567c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2692967322297523351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
