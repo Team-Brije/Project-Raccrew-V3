@@ -266,6 +266,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bf6fdc9b-f12d-4ca5-9c5c-3e09be43fc73
     m_ActionName: Movement/PressRight[/Keyboard/d,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6719193261493995651}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: ThisIsMe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c482b055-e5d3-45ec-9029-9f6c3425fe5b
+    m_ActionName: Movement/ThisIsMe[/XInputControllerWindows/leftStickPress,/XInputControllerWindows1/leftStickPress]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement

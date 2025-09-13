@@ -115,7 +115,7 @@ public class InputHandler : MonoBehaviour
 
     public void ThisIsMe(InputAction.CallbackContext context)
     {
-        Debug.Log($"[InputHandler] ThisIsMe triggered: {context.phase}");
+        //Debug.Log($"[InputHandler] ThisIsMe triggered: {context.phase}");
         if (context.performed) { OnThisIsMe?.Invoke(id, true); }
         else if (context.canceled) { OnThisIsMe?.Invoke(id, false); }
     }
