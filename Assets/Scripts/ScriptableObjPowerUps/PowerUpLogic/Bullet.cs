@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     public BulletType type;
 
     public Vector3 P0, V0;
+    public float velocityMultiply = 1;
 
     private float t;
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime;
+        t += Time.deltaTime*velocityMultiply;
         transform.position = positionFunction();
         transform.forward = velocityFunction();
     }
