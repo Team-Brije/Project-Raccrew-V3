@@ -14,6 +14,7 @@ public class InputHandler : MonoBehaviour
     public static event Action<int> OnDown;
     public static event Action<int> OnLeft;
     public static event Action<int> OnRight;
+    public static event Action<int, bool> OnThisIsMe;
 
     [HideInInspector] public float horizontal;
     [HideInInspector] public float vertical;
@@ -110,6 +111,13 @@ public class InputHandler : MonoBehaviour
         {
             OnRight?.Invoke(id);
         }
+    }
+
+    public void ThisIsMe(InputAction.CallbackContext context)
+    {
+        Debug.Log($"[InputHandler] ThisIsMe triggered: {context.phase}");
+        if (context.performed) { OnThisIsMe?.Invoke(id, true); }
+        else if (context.canceled) { OnThisIsMe?.Invoke(id, false); }
     }
 
     #endregion

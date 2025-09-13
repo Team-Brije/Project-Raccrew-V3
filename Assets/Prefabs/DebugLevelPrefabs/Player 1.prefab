@@ -198,6 +198,7 @@ MonoBehaviour:
   initialspeed: 0
   speed: 0
   smoothtime: 0.1
+  isMoving: 0
   dashDuration: 0
   dashPercentageBoost: 0.2
   canDash: 1
@@ -258,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6286747814775432036}
   - component: {fileID: 6478395417902831919}
+  - component: {fileID: 5587069685182356777}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: PlayerHolder
@@ -294,6 +296,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caed225cc821e645ab42ed643205fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5587069685182356777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667094436402562908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e274dacc0414fa64db45019de91d6638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisIsMe: {fileID: 0}
 --- !u!1 &6224672625276285874
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +515,8 @@ MonoBehaviour:
   PlayerName: Player 1
   MapacheColor: {r: 0, g: 0, b: 0, a: 1}
   gameManager: {fileID: 0}
+  playerpos: {fileID: 0}
+  confetti: {fileID: 0}
 --- !u!114 &1385508034238685459
 MonoBehaviour:
   m_ObjectHideFlags: 0
