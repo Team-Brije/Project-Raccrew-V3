@@ -50,6 +50,7 @@ public class ObjectMover : MonoBehaviour
 
     public void MoveLeft(int id)
     {
+        return;
         if (id == playerId && canInteract)
         {
             animator.Play("GoToLeft");
@@ -58,6 +59,7 @@ public class ObjectMover : MonoBehaviour
 
     public void MoveRight(int id)
     {
+        return;
         if (id == playerId && canInteract)
         {
             animator.Play("GoToRight");

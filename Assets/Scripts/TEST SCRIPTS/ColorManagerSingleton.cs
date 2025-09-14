@@ -32,6 +32,13 @@ public class ColorManagerSingleton : MonoBehaviour
     public Material materialP3;
     public Material materialP4;
 
+    [Header("For Liverpool")]
+    public PlayerSkin P1Skin;
+    public PlayerSkin P2Skin;
+    public PlayerSkin P3Skin;
+    public PlayerSkin P4Skin;
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -43,11 +50,18 @@ public class ColorManagerSingleton : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        LiverPoolLogic();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LiverPoolLogic()
     {
-        
+        materialP1 = P1Skin.targetMaterial;
+        materialP2 = P2Skin.targetMaterial;
+        materialP3 = P3Skin.targetMaterial;
+        materialP4 = P4Skin.targetMaterial;
+        colorP1 = materialP1.color;
+        colorP2 = materialP2.color;
+        colorP3 = materialP3.color;
+        colorP4 = materialP4.color;
     }
 }

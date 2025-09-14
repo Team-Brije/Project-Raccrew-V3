@@ -55,7 +55,7 @@ public class UIMovementHandler : MonoBehaviour
             {
                 foreach (var item in itemStorages)
                 {
-                    item.SetAttribute();
+                    //item.SetAttribute();
                 }
                 movementHandler.canMove = true;
                 if (PlayerSelectScript.NumOfPlayers > 1) { PlayerSelectScript.arePlayersReady = true; }
@@ -81,6 +81,7 @@ public class UIMovementHandler : MonoBehaviour
 
     public void MoveUp(int id)
     {
+        return;
         if (id != playerId) { return; }
         if (arrpos >= ypos.Length -1) { arrpos = 0; }
         else { arrpos++; } 
@@ -88,6 +89,7 @@ public class UIMovementHandler : MonoBehaviour
 
     public void MoveDown(int id)
     {
+        return;
         if(id != playerId) { return; }
         if (arrpos <= 0) { arrpos = ypos.Length -1; }
         else { arrpos--; }
