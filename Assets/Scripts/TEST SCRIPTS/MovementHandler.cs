@@ -38,6 +38,8 @@ public class MovementHandler : MonoBehaviour
 
     public float IFrameDuration = 2;
 
+    public Animator DashAnimator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -122,6 +124,7 @@ public class MovementHandler : MonoBehaviour
     public IEnumerator Dashing()
     {
         Debug.Log("Dashing");
+        DashAnimator.SetTrigger("Dash");
         canDash = false;
         float startspeed = initialspeed;
         float dashingspeed = initialspeed * dashPercentageBoost;
