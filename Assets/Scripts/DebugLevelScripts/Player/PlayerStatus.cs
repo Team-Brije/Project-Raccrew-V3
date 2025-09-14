@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,20 +13,23 @@ public class PlayerStatus : MonoBehaviour
     int id;
     public Transform playerpos;
     public GameObject confetti;
+    public static event Action mapacheDead;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Boundary")
+        if (other.tag == "Boundary")
         {
             //Debug.Log("Skill Issue");
             isOut = true;
+            mapacheDead?.Invoke();
             movement.enabled = false;
         }
         if (other.tag == "GoldBullet")
         {
             //Debug.Log("Skill Issue");
             isOut = true;
+            mapacheDead?.Invoke();
             movement.enabled = false;
-            Instantiate(confetti,playerpos.position,confetti.transform.rotation);
+            Instantiate(confetti, playerpos.position, confetti.transform.rotation);
             this.gameObject.SetActive(false);
         }
     }
@@ -33,6 +37,7 @@ public class PlayerStatus : MonoBehaviour
     private void Start()
     {
         movement = GetComponent<MovementHandler>();
+        if(gameManager != null)
         gameManager.playerList.Add(this);
         id = movement.playerId;
         switch (id)

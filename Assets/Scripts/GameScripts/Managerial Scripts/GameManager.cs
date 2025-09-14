@@ -45,8 +45,18 @@ public class GameManager : MonoBehaviour
     public static bool CanRumble = true;
 
     public static event Action<int> OnRumble;
-    public static event Action<int,float> OnStun;
+    public static event Action<int, float> OnStun;
 
+    private float timetime;
+
+    void OnEnable()
+    {
+        PlayerStatus.mapacheDead += mapacheDeadHandler;
+    }
+    void OnDisable()
+    {
+        PlayerStatus.mapacheDead -= mapacheDeadHandler;
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -54,13 +64,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         roundOver = false;
         InitializeGame();
+        Softlock = true;
         PlayerSelectScript.arePlayersReady = false;
+        
     }
-
-    // Update is called once per frame
-    void Update()
+    public void mapacheDeadHandler()
     {
-
         foreach (PlayerStatus player in playerList)
         {
             if (player.isOut == true)
@@ -68,10 +77,13 @@ public class GameManager : MonoBehaviour
                 playerList.Remove(player);
             }
         }
-
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        timetime = Time.timeSinceLevelLoad;
         if (playerList.Count == 1)
         {
-
             Color winnercolor = playerList[0].GetComponent<PlayerStatus>().MapacheColor;
             string winner = playerList[0].PlayerName;
             WinnerScreen.SetActive(true);
@@ -133,7 +145,7 @@ public class GameManager : MonoBehaviour
             CheckForWinner();
         }
 
-        if (playerList.Count == 0 && Softlock && !debug)
+        if (playerList.Count == 0 && Softlock && !debug && timetime > 0.5f)
         {
             WinnerScreen.SetActive(true);
             WinnerText.text = "That was literally frame perfect, HOW. No one Wins";
@@ -231,7 +243,7 @@ public class GameManager : MonoBehaviour
             //RumblePlayer4 = GameObject.FindGameObjectWithTag("Player4").GetComponent<RumbleHandler>();
         }
     }
-    
+
     public static void AddPercentage(int num, float percentage)
     {
         if (num == 1)
@@ -296,7 +308,7 @@ public class GameManager : MonoBehaviour
         }
         if (num == 1)
         {
-            OnStun?.Invoke(0,stuntime);
+            OnStun?.Invoke(0, stuntime);
             //Player1.EnableStun(stuntime);
             OnRumble?.Invoke(0);
         }
@@ -322,15 +334,24 @@ public class GameManager : MonoBehaviour
 
     public void Setup()
     {
-        foreach (GameObject player in players)
+        if (playerList != null)
         {
-            //playerList.Add(player.GetComponent<PlayerStatus>());
-            //player.GetComponent<MovementHandler>().enabled = true;
-            player.GetComponent<PlayerStatus>().isOut = false;
+            foreach (GameObject player in players)
+            {
+                //playerList.Add(player.GetComponent<PlayerStatus>());
+                //player.GetComponent<MovementHandler>().enabled = true;
+                if (player.TryGetComponent<PlayerStatus>(out PlayerStatus status))
+                {
+                    //player.GetComponent<PlayerStatus>().isOut = false;
+                    status.isOut = false;
+                }
+            }
         }
+
         DirtP1 = 1;
         DirtP2 = 1;
         DirtP3 = 1;
         DirtP4 = 1;
     }
+
 }

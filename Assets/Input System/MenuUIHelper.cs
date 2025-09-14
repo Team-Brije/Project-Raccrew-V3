@@ -14,12 +14,6 @@ public class MenuUIHelper : MonoBehaviour
         eventSystem = EventSystem.current;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(Play.transform.parent.gameObject.activeSelf);
-    }
-
     public void ChangeControls(PlayerInput input)
     {
         switch (input.currentControlScheme)

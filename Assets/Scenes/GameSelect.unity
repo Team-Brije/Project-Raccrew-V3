@@ -8454,6 +8454,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3542852092398272455, guid: ef50b06eb7d2b9546995118763558a1b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3542852092398272455, guid: ef50b06eb7d2b9546995118763558a1b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ef50b06eb7d2b9546995118763558a1b,
         type: 3}
       propertyPath: m_Name
@@ -9843,7 +9853,7 @@ PrefabInstance:
     - target: {fileID: 1269382054592469389, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
         type: 3}
       propertyPath: players.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1269382054592469389, guid: 3a1d0b5a86bb9c74b8c79f2e680814cc,
         type: 3}
