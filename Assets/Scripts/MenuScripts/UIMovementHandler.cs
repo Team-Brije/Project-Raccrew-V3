@@ -90,7 +90,7 @@ public class UIMovementHandler : MonoBehaviour
     public void MoveDown(int id)
     {
         return;
-        if(id != playerId) { return; }
+        if (id != playerId) { return; }
         if (arrpos <= 0) { arrpos = ypos.Length -1; }
         else { arrpos--; }
     }

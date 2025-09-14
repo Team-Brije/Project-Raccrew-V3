@@ -117,7 +117,9 @@ public class PlayerPowerupStorage : MonoBehaviour
     public void ResetObjects()
     {
         hasobject = false;
+        if(delobj0 != null)
         delobj0.DeleteObjects();
+        if(delobj1 != null)
         delobj1.DeleteObjects();
         placeholderprefab = null;
         prefabtospawn = null;
@@ -133,7 +135,7 @@ public class PlayerPowerupStorage : MonoBehaviour
     {
         for (int i = 0; i < Times; i++)
         {
-            Debug.Log("Shot Fired");
+            //Debug.Log("Shot Fired");
             Instantiate(prefabtospawn, POS, ROT);
             yield return new WaitForSeconds(1);
         }

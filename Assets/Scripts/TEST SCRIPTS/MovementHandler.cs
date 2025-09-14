@@ -123,8 +123,8 @@ public class MovementHandler : MonoBehaviour
 
     public IEnumerator Dashing()
     {
-        Debug.Log("Dashing");
-        DashAnimator.SetTrigger("Dash");
+        //Debug.Log("Dashing");
+        //DashAnimator.SetTrigger("Dash");
         canDash = false;
         float startspeed = initialspeed;
         float dashingspeed = initialspeed * dashPercentageBoost;

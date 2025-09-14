@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pink
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: b923ed6ada8622f46898627aac1addeb, type: 2}
-  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 1, g: 0, b: 0.78583336, a: 0}
   targetMesh: {fileID: 0}

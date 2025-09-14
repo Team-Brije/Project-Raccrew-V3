@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 319842187865053853}
   m_Layer: 0
   m_Name: PlayerHandler
-  m_TagString: PlayerHandler2
+  m_TagString: PlayerHandler3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
