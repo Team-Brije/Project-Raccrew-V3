@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Blue
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: eef519e528aa1a044abeef6ce520f72e, type: 2}
-  targetColor: {r: 0, g: 0.6401701, b: 1, a: 0}
+  targetColor: {r: 0, g: 0.6401701, b: 1, a: 1}
   targetMesh: {fileID: 0}
