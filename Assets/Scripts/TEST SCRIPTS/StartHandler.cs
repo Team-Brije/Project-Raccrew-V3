@@ -19,7 +19,7 @@ public class StartHandler : MonoBehaviour
     {
         if (PlayerSelectScript.arePlayersReady)
         {
-            SceneManager.LoadScene("Loading");
+            SceneManager.LoadScene("GAME_Classic");
         }
     }
 }
