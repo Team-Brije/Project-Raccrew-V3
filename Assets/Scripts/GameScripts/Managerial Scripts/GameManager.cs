@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public bool canPass=true;
 
     private float timetime;
+    public MultipleTargetCamera cameragetter;
 
     void OnEnable()
     {
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cameragetter.targets = playerList;
         timetime = Time.timeSinceLevelLoad;
         if (playerList.Count == 1)
         {
