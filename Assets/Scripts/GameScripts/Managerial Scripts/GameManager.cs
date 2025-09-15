@@ -13,10 +13,14 @@ public class GameManager : MonoBehaviour
     public Image WinnerColor;
     public GameObject WinnerScreen;
     public TMPro.TextMeshProUGUI WinnerText;
-    public GameObject[] wonRounds;
     bool Softlock = true;
     public Countdown timer;
     public float timepercentage;
+    public GameObject[] wonRoundsP1;
+    public GameObject[] wonRoundsP2;
+    public GameObject[] wonRoundsP3;
+    public GameObject[] wonRoundsP4;
+    public GameObject[] machapesHolderCanvas;
     // -- Static Variables --
     public static int RoundsWonP1;
     public static int RoundsWonP2;
@@ -47,6 +51,9 @@ public class GameManager : MonoBehaviour
     public static event Action<int> OnRumble;
     public static event Action<int, float> OnStun;
 
+    public int howManyMachapes;
+    public bool canPass=true;
+
     private float timetime;
 
     void OnEnable()
@@ -66,10 +73,17 @@ public class GameManager : MonoBehaviour
         InitializeGame();
         Softlock = true;
         PlayerSelectScript.arePlayersReady = false;
+        canPass = true;
         
     }
     public void mapacheDeadHandler()
     {
+        if (canPass)
+        {
+            howManyMachapes = playerList.Count;
+            Debug.Log("Cuantoshay: "+howManyMachapes);
+            canPass = false;
+        }
         foreach (PlayerStatus player in playerList)
         {
             if (player.isOut == true)
@@ -88,7 +102,7 @@ public class GameManager : MonoBehaviour
             string winner = playerList[0].PlayerName;
             WinnerScreen.SetActive(true);
             WinnerText.text = winner + " Wins!";
-            WinnerColor.color = winnercolor;
+            //WinnerColor.color = winnercolor;
             Softlock = false;
             timer.Stop();
             Time.timeScale = 1 * timepercentage;
@@ -98,10 +112,7 @@ public class GameManager : MonoBehaviour
                 RoundsWonP1++;
                 roundOver = true;
 
-                for (int i = 0; i < RoundsWonP1; i++)
-                {
-                    wonRounds[i].gameObject.SetActive(true);
-                }
+                winFUnctionCanvas();
 
                 Invoke("RestartGame", 5 * timepercentage);
             }
@@ -110,10 +121,7 @@ public class GameManager : MonoBehaviour
                 RoundsWonP2++;
                 roundOver = true;
 
-                for (int i = 0; i < RoundsWonP2; i++)
-                {
-                    wonRounds[i].gameObject.SetActive(true);
-                }
+                winFUnctionCanvas();
 
                 Invoke("RestartGame", 5 * timepercentage);
             }
@@ -122,10 +130,7 @@ public class GameManager : MonoBehaviour
                 RoundsWonP3++;
                 roundOver = true;
 
-                for (int i = 0; i < RoundsWonP3; i++)
-                {
-                    wonRounds[i].gameObject.SetActive(true);
-                }
+                winFUnctionCanvas();
 
                 Invoke("RestartGame", 5 * timepercentage);
             }
@@ -134,10 +139,7 @@ public class GameManager : MonoBehaviour
                 RoundsWonP4++;
                 roundOver = true;
 
-                for (int i = 0; i < RoundsWonP4; i++)
-                {
-                    wonRounds[i].gameObject.SetActive(true);
-                }
+                winFUnctionCanvas();
 
                 Invoke("RestartGame", 5 * timepercentage);
             }
@@ -147,13 +149,44 @@ public class GameManager : MonoBehaviour
 
         if (playerList.Count == 0 && Softlock && !debug && timetime > 0.5f)
         {
+            machapesHolderCanvas[0].SetActive(false);
+            machapesHolderCanvas[1].SetActive(false);
             WinnerScreen.SetActive(true);
-            WinnerText.text = "That was literally frame perfect, HOW. No one Wins";
+            //WinnerText.text = "That was literally frame perfect, HOW. No one Wins";
+            WinnerText.text = "Machempate";
             WinnerColor.color = Color.grey;
             Invoke("RestartGame", 5);
         }
     }
+    public void winFUnctionCanvas()
+    {
+        for (int i = 0; i < RoundsWonP1; i++)
+        {
+            wonRoundsP1[i].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < RoundsWonP2; i++)
+        {
+            wonRoundsP2[i].gameObject.SetActive(true);
+        }
+        if (howManyMachapes >2 )
+        {
+            machapesHolderCanvas[2].SetActive(true);
+            for (int i = 0; i < RoundsWonP3; i++)
+            {
+                wonRoundsP3[i].gameObject.SetActive(true);
+            }
+            if (howManyMachapes > 3)
+            {
+                machapesHolderCanvas[3].SetActive(true);
+                for (int i = 0; i < RoundsWonP4; i++)
+            {
+                wonRoundsP4[i].gameObject.SetActive(true);
+            }
+            }
 
+        }
+       
+    }
 
     void RestartGame()
     {
