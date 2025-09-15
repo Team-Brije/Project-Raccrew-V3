@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuAndSceneChanger : MonoBehaviour
 {
@@ -16,12 +18,22 @@ public class MenuAndSceneChanger : MonoBehaviour
 
     public GameObject PlayButton;
     public GameObject SettingsButton;
+
+    VolumeSliderManager volumeSliderManager;
+
+    public Selectable[] allOptions;
+
+    private void Awake()
+    {
+        SetDefaultValues();
+    }
+
     public void ChangeScene(string sceneName)
     {
         //Debug.Log("Scene");
         SceneManager.LoadScene(sceneName);
     }
-
+    
     public void GamemodeScene(string scene)
     {
         gamemode = scene;
@@ -33,6 +45,53 @@ public class MenuAndSceneChanger : MonoBehaviour
     public void GamemodeSceneLoad()
     {
         SceneManager.LoadScene("Loading");
+    }
+
+
+    public void SetDefaultValues()
+    {
+        for (int i = 0; i < allOptions.Length; i++)
+        {
+            switch (i)
+            {
+                case 0:  //Resolution
+                    ChangeResolution(allOptions[i].GetComponent<TMP_Dropdown>().value);
+                    break;
+                case 1:  //Fullscreen
+                    ChangeFullscreenBehaviour(allOptions[i].GetComponent<TMP_Dropdown>().value);
+                    break;
+                case 2:  //Framerate
+                    SetFPSCap(allOptions[i].GetComponent<TMP_Dropdown>().value);
+                    break;
+                case 3:  //Vsync
+                    EnableVsync(allOptions[i].GetComponent<Toggle>().isOn);
+                    break;
+                case 4:  //MusicVolume
+                    volumeSliderManager = allOptions[i].GetComponent<VolumeSliderManager>();
+                    volumeSliderManager.ChangeVolume();
+                    break;
+                case 5:  //SFXVolume 
+                    volumeSliderManager = allOptions[i].GetComponent<VolumeSliderManager>();
+                    volumeSliderManager.ChangeVolume();
+                    break;
+                case 6:  //VoiceVolume UNUSED
+                    volumeSliderManager = allOptions[i].GetComponent<VolumeSliderManager>();
+                    volumeSliderManager.ChangeVolume();
+                    break;
+                case 7:  //RoundDuration
+                    ChangeRoundTime(allOptions[i].GetComponent<TMP_Dropdown>().value);
+                    break;
+                case 8:  //PWUpFrequency
+                    ChangeSpawnRate(allOptions[i].GetComponent<TMP_Dropdown>().value);
+                    break;
+                case 9:  //PowerUps
+                    EnablePowerUps(allOptions[i].GetComponent<Toggle>().isOn);
+                    break;
+                case 10: //ControlVibration
+                    EnableRumble(allOptions[i].GetComponent<Toggle>().isOn);
+                    break;
+            }
+        }
     }
 
     public void SwitchPanel()

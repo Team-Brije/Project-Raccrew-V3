@@ -17,7 +17,7 @@ public class StartHandler : MonoBehaviour
 
     void StartGame(int id)
     {
-        if (PlayerSelectScript.arePlayersReady)
+        if (PlayerSelectScript.arePlayersReady && PlayerSelectScript.isInPlayerSelectScreen)
         {
             SceneManager.LoadScene("GAME_Classic");
         }

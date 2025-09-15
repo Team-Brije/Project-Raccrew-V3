@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
     public static bool DirtCap = true;
     // --- GAME VARIABLES --- 
     public static float MaxDirtPercentage = 2;
-    public static int GameTimer = 30;
-    public static float SpawnFrequency = 3;
+    public static int GameTimer = 60;
+    public static float SpawnFrequency = 5;
     public static bool CanSpawnPowerUps = true;
     public static bool CanRumble = true;
 

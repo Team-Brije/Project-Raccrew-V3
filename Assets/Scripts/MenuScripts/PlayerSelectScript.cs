@@ -18,11 +18,14 @@ public class PlayerSelectScript : MonoBehaviour
     public GameObject[] PlayerUI;
     public static bool arePlayersReady = false;
     public GameObject ReadyText;
+
+    public static bool isInPlayerSelectScreen = false;  
     // Call this method when you want to join a player manually
 
     private void Start()
     {
         arePlayersReady = false;
+        isInPlayerSelectScreen = true;
         NumOfPlayers = 0;
         InputManager.playerPrefab.tag = "PlayerHandler1";
     }
