@@ -17,7 +17,7 @@ public class ShowingPlayerToPlayer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        thisIsMe.transform.Rotate(0, 10, 0);
+        //thisIsMe.transform.Rotate(0, 10, 0);
     }
     private void OnDisable()
     {

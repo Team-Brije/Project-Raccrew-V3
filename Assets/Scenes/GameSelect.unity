@@ -176,7 +176,7 @@ MonoBehaviour:
   - 2
   - 4.5
   - 7
-  movementHandler: {fileID: 1445997955}
+  movementHandler: {fileID: 816312199}
   playerUI: {fileID: 2692967322297523352}
   characterselectUI: {fileID: 1250092560}
   image: {fileID: 1969726951}
@@ -3402,6 +3402,7 @@ MonoBehaviour:
   eventSystem: {fileID: 0}
   PlayButton: {fileID: 2119558657}
   SettingsButton: {fileID: 24166039}
+  allOptions: []
 --- !u!114 &487641875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,6 +4887,8 @@ MonoBehaviour:
   P2Skin: {fileID: 11400000, guid: 977bdd9c15cf35a4fa49633527e4d1ef, type: 2}
   P3Skin: {fileID: 11400000, guid: 4441a666c0eb44f429c34ee1dc068cbe, type: 2}
   P4Skin: {fileID: 11400000, guid: 95aca572d3fcd764ebb612b2dd2f139c, type: 2}
+  colorWinner: {r: 0, g: 0, b: 0, a: 0}
+  WinnerName: 
 --- !u!4 &688596902
 Transform:
   m_ObjectHideFlags: 0
@@ -5107,7 +5110,7 @@ MonoBehaviour:
   - 2
   - 4.5
   - 7
-  movementHandler: {fileID: 1445997955}
+  movementHandler: {fileID: 1241789300}
   playerUI: {fileID: 2692967322297523353}
   characterselectUI: {fileID: 1874539952}
   image: {fileID: 790330169}
