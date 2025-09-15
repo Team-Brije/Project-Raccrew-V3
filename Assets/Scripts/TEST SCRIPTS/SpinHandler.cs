@@ -12,35 +12,40 @@ public class SpinHandler : MonoBehaviour
 
 
     public void OnTriggerEnter(Collider other) {
+        CameraShake.Instance.ShakeThisCamera(0.3f, 1.3f);
         if (shovehandler.isShoving == false)
         {
             if (other.gameObject.tag == "Player1")
             {
-                float pushForce = shoveSpeed*GameManager.DirtP1;
+                float pushForce = shoveSpeed * GameManager.DirtP1;
                 float dirtForce = pushForce * 2;
                 Debug.Log(dirtForce);
                 other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * dirtForce, ForceMode.Impulse);
                 GameManager.StartStun(1, StunTime);
-        } else if (other.gameObject.tag == "Player2")
+            }
+            else if (other.gameObject.tag == "Player2")
             {
-                float pushForce = shoveSpeed*GameManager.DirtP2;
+                float pushForce = shoveSpeed * GameManager.DirtP2;
                 float dirtForce = pushForce * 2;
                 other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * dirtForce, ForceMode.Impulse);
                 GameManager.StartStun(2, StunTime);
-        } else if (other.gameObject.tag == "Player3")
+            }
+            else if (other.gameObject.tag == "Player3")
             {
-                float pushForce = shoveSpeed*GameManager.DirtP3;
+                float pushForce = shoveSpeed * GameManager.DirtP3;
                 float dirtForce = pushForce * 2;
                 other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * dirtForce, ForceMode.Impulse);
                 GameManager.StartStun(3, StunTime);
-        } else if (other.gameObject.tag == "Player4")
+            }
+            else if (other.gameObject.tag == "Player4")
             {
-                float pushForce = shoveSpeed*GameManager.DirtP4;
+                float pushForce = shoveSpeed * GameManager.DirtP4;
                 float dirtForce = pushForce * 2;
                 other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * dirtForce, ForceMode.Impulse);
                 GameManager.StartStun(4, StunTime);
+            }
         }
-    }}
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player1")

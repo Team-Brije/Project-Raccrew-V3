@@ -48,6 +48,7 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        CameraShake.Instance.ShakeThisCamera(0.2f, 1f);
         if (other.gameObject.tag == "Player1")
         {
             GameManager.AddPercentage(1, DirtPercentage);

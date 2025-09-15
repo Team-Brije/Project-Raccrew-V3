@@ -51,6 +51,7 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.tag == "Stage" && type == BulletType.GroundHitting)
         {
+            CameraShake.Instance.ShakeThisCamera(0.3f, 1.3f);
             Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(MainGameObject);
         }
@@ -58,6 +59,7 @@ public class Bullet : MonoBehaviour
         {
             if (other.gameObject.tag == "Player1"  || other.gameObject.tag == "Player2" || other.gameObject.tag == "Player3" || other.gameObject.tag == "Player4")
             {
+                CameraShake.Instance.ShakeThisCamera(0.3f, 1.3f);
                 Instantiate(ExplosionPrefab, gameObject.transform.position, Quaternion.identity);
                 Destroy(MainGameObject);
             }
