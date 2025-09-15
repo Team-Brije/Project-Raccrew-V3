@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,8 @@ public class ColorManagerSingleton : MonoBehaviour
     public PlayerSkin P2Skin;
     public PlayerSkin P3Skin;
     public PlayerSkin P4Skin;
+    public Color colorWinner;
+    public String WinnerName;
 
 
     private void Awake()

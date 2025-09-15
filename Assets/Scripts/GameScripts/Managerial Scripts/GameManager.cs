@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
                 Invoke("RestartGame", 5 * timepercentage);
             }
 
-            CheckForWinner();
+            CheckForWinner(winnercolor);
         }
 
         if (playerList.Count == 0 && Softlock && !debug && timetime > 0.5f)
@@ -211,33 +211,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckForWinner()
+    public void CheckForWinner(Color color)
     {
         if (RoundsWonP1 == 3)
         {
             Debug.Log("Game Winner IS P1");
-            SendToWinnerScreen();
+            SendToWinnerScreen("Player 1",color);
         }
         if (RoundsWonP2 == 3)
         {
             Debug.Log("Game Winner IS P2");
-            SendToWinnerScreen();
+            SendToWinnerScreen("Player 2",color);
         }
         if (RoundsWonP3 == 3)
         {
             Debug.Log("Game Winner IS P3");
-            SendToWinnerScreen();
+            SendToWinnerScreen("Player 3",color);
         }
         if (RoundsWonP4 == 3)
         {
             Debug.Log("Game Winner IS P4");
-            SendToWinnerScreen();
+            SendToWinnerScreen("Player 4",color);
         }
     }
 
-    public void SendToWinnerScreen()
+    public void SendToWinnerScreen(string winner, Color winnercolor)
     {
-        SceneManager.LoadScene("Main Menu");
+        ColorManagerSingleton.Instance.colorWinner = winnercolor;
+        ColorManagerSingleton.Instance.WinnerName = winner;
+        //SceneManager.LoadScene("WinnerScene");
+        Invoke(nameof(winnerChange),2);
+    }
+    public void winnerChange()
+    {
+        SceneManager.LoadScene("WinnerScene");
     }
 
     public void CleanList()
