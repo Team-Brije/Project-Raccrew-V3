@@ -16,6 +16,6 @@ MonoBehaviour:
   PowerUpName: GoldenGun
   BulletToSpawn: {fileID: 7307764715654544167, guid: c6b509b515aaec44b939bab9d45c7ae0,
     type: 3}
-  Trajectory: {fileID: 6468480861730394447, guid: d3529984bde99a642912049a01d1caec,
+  Trajectory: {fileID: 6468480861730394447, guid: c5d8a324781b7a24683c9d425670d6af,
     type: 3}
   WavesSpawned: 1
