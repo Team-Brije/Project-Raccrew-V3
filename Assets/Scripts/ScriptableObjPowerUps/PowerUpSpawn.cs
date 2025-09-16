@@ -61,6 +61,7 @@ public class PowerUpSpawn : ScriptableObjPower
 
             
         }
+        target.GetComponent<PlayerPowerupStorage>().ApplyPowerupToScreen(PowerUpName);
     }
 
     void SetList()

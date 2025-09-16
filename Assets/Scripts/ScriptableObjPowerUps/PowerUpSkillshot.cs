@@ -16,5 +16,6 @@ public class PowerUpSkillshot : ScriptableObjPower
         target.GetComponent<PlayerPowerupStorage>().hasobject = false;
         target.GetComponent<PlayerPowerupStorage>().SetObjects(BulletToSpawn, Trajectory);
         target.GetComponent<PlayerPowerupStorage>().SpawnObject(WavesSpawned);
+        target.GetComponent<PlayerPowerupStorage>().ApplyPowerupToScreen(PowerUpName);
     }
 }

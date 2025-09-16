@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wind Wave
   m_EditorClassIdentifier: 
   img: {fileID: 21300000, guid: f6030eeda825b934fb7c292885926b24, type: 3}
+  PowerUpName: WindWave
   BulletToSpawn: {fileID: 7307764715654544167, guid: e141a4c9ac468ef4a9ec4c48040c7b8b,
     type: 3}
   Trajectory: {fileID: 6468480861730394447, guid: 95aa5d8b9be2f544c927be6a015ab900,

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Grenade
   m_EditorClassIdentifier: 
   img: {fileID: 21300000, guid: 34ca1ef751523304d8d85b2cd57cd4cf, type: 3}
+  PowerUpName: Grenade
   BulletToSpawn: {fileID: 8915863656106110470, guid: bb947f0c02f28e243a5e8fba3cfdfbf4,
     type: 3}
   Trajectory: {fileID: 8116522016223974450, guid: 095d0afa54165b84d9e84ab7f19f8b5f,

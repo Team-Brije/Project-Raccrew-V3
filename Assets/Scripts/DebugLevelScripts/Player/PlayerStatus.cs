@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class PlayerStatus : MonoBehaviour
     public Transform playerpos;
     public GameObject confetti;
     public static event Action mapacheDead;
+
+    public Sprite raccImgStun;
+    public Image RaccImg;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Boundary")
         {
             //Debug.Log("Skill Issue");
+            RaccImg.sprite = raccImgStun;
             isOut = true;
             mapacheDead?.Invoke();
             movement.enabled = false;
@@ -26,6 +31,7 @@ public class PlayerStatus : MonoBehaviour
         if (other.tag == "GoldBullet")
         {
             //Debug.Log("Skill Issue");
+            RaccImg.sprite = raccImgStun;
             isOut = true;
             mapacheDead?.Invoke();
             movement.enabled = false;
@@ -37,6 +43,8 @@ public class PlayerStatus : MonoBehaviour
     private void Start()
     {
         movement = GetComponent<MovementHandler>();
+        RaccImg = movement.faceImage;
+        raccImgStun = movement.stunFace;
         if(gameManager != null)
         gameManager.playerList.Add(this);
         id = movement.playerId;

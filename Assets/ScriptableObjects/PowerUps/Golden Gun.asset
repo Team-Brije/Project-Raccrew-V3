@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7f05dc1d21f49419f5cc4292fe747e, type: 3}
   m_Name: Golden Gun
   m_EditorClassIdentifier: 
-  img: {fileID: 21300000, guid: 854ac94ff8bbde249ae35c8e6daaf052, type: 3}
+  img: {fileID: 21300000, guid: dc4e4598fe8a32349a7f2211c7f43bd4, type: 3}
+  PowerUpName: GoldenGun
   BulletToSpawn: {fileID: 7307764715654544167, guid: c6b509b515aaec44b939bab9d45c7ae0,
     type: 3}
   Trajectory: {fileID: 6468480861730394447, guid: d3529984bde99a642912049a01d1caec,

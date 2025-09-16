@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RPG
   m_EditorClassIdentifier: 
   img: {fileID: 21300000, guid: 7ba1835bec76c774c858b8b371701baf, type: 3}
+  PowerUpName: RPG
   BulletToSpawn: {fileID: 7307764715654544167, guid: 6e5d3d369eb59c1439133a6cbea583b7,
     type: 3}
   Trajectory: {fileID: 6468480861730394447, guid: d3529984bde99a642912049a01d1caec,

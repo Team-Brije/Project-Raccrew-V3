@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementHandler : MonoBehaviour
 {
@@ -39,6 +40,12 @@ public class MovementHandler : MonoBehaviour
     public float IFrameDuration = 2;
 
     public Animator DashAnimator;
+
+    public Sprite normalFace;
+    public Sprite stunFace;
+
+    public Image faceImage;
+
 
     private void Start()
     {
@@ -151,7 +158,9 @@ public class MovementHandler : MonoBehaviour
     IEnumerator Stun(float time)
     {
         canMove = false;
+        faceImage.sprite = stunFace;
         yield return new WaitForSeconds(time);
+        faceImage.sprite = normalFace;
         canMove = true;
     }
 }

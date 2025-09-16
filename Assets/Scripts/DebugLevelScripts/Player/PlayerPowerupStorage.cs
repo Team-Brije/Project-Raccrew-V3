@@ -20,6 +20,7 @@ public class PlayerPowerupStorage : MonoBehaviour
     Transform objectspawnback;
     Transform objectspawnfront;
     
+    public UIImgHolder uIImgHolder;
 
     DeletePlaceholder delobj0;
     DeletePlaceholder delobj1;
@@ -189,6 +190,7 @@ public class PlayerPowerupStorage : MonoBehaviour
         {
             UseObject();
             PlayAnim();
+            ResetUI();
         }
     }
 
@@ -204,5 +206,15 @@ public class PlayerPowerupStorage : MonoBehaviour
         rb.useGravity = false;
         yield return new WaitForSeconds(duration);
         rb.useGravity = true;
+    }
+
+    public void ApplyPowerupToScreen(string name)
+    {
+        uIImgHolder.switchImage(name);
+    }
+
+    public void ResetUI()
+    {
+        uIImgHolder.switchImage("blank");
     }
 }

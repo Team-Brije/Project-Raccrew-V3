@@ -10,6 +10,8 @@ public class Countdown : MonoBehaviour
     public bool isCountingDown = false;
     public TextMeshProUGUI timerText;
     public GameObject[] tieBreakersPrefabs;
+    public string[] tieBreakersName;
+    
     private void Start()
     {
         duration = GameManager.GameTimer;
@@ -39,7 +41,9 @@ public class Countdown : MonoBehaviour
         timeRemaining--;
         if (timeRemaining == 0)
         {
+            isCountingDown = false;
             TieBreakersSpawner();
+            return;
         }
         if (timeRemaining > 0 && isCountingDown)
         {
@@ -56,5 +60,6 @@ public class Countdown : MonoBehaviour
     private void TieBreakersSpawner(){
         int tieBreakerIndex = Random.Range(0, tieBreakersPrefabs.Length);
         Instantiate(tieBreakersPrefabs[tieBreakerIndex],Vector3.zero,Quaternion.identity);
+        timerText.text = tieBreakersName[tieBreakerIndex];
     }
 }

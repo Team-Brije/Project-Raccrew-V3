@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class ScriptableObjPower : ScriptableObject
 {
     public Sprite img;
+    public string PowerUpName;
     public abstract void Apply(GameObject target);
   
 }

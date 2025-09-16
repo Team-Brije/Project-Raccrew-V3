@@ -11,6 +11,7 @@ public class PowerUpAttack : ScriptableObjPower
         target.GetComponent<PlayerPowerupStorage>().ResetObjects();
         target.GetComponent<PlayerPowerupStorage>().hasAnim = true;
         target.GetComponent<PlayerPowerupStorage>().AnimName = AnimationName;
+        target.GetComponent<PlayerPowerupStorage>().ApplyPowerupToScreen(PowerUpName);
         //target.GetComponent<PlayerPowerupStorage>().StartAnim(AnimationName);
     }
 }
