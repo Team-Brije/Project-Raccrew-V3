@@ -15,7 +15,7 @@ public class PlayerStatus : MonoBehaviour
     public Transform playerpos;
     public GameObject confetti;
     public static event Action mapacheDead;
-
+    public GameObject racc;
     public Sprite raccImgStun;
     public Image RaccImg;
     private void OnTriggerEnter(Collider other)
@@ -32,11 +32,12 @@ public class PlayerStatus : MonoBehaviour
         {
             //Debug.Log("Skill Issue");
             RaccImg.sprite = raccImgStun;
-            isOut = true;
-            mapacheDead?.Invoke();
-            movement.enabled = false;
             Instantiate(confetti, playerpos.position, confetti.transform.rotation);
+            Debug.Log(this.gameObject.name);
+            isOut = true;
+            movement.enabled = false;
             this.gameObject.SetActive(false);
+            mapacheDead?.Invoke();
         }
     }
 

@@ -636,6 +636,7 @@ MonoBehaviour:
   playerpos: {fileID: 1326773594393605267}
   confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
     type: 3}
+  racc: {fileID: 459860574787114514}
   raccImgStun: {fileID: 0}
   RaccImg: {fileID: 0}
 --- !u!114 &4081271857854813486
@@ -990,6 +991,7 @@ MonoBehaviour:
   playerpos: {fileID: 3741097559316602080}
   confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
     type: 3}
+  racc: {fileID: 6456779389249556641}
   raccImgStun: {fileID: 0}
   RaccImg: {fileID: 0}
 --- !u!114 &2474625087922224769
@@ -2912,6 +2914,7 @@ MonoBehaviour:
   playerpos: {fileID: 7331345437857444838}
   confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
     type: 3}
+  racc: {fileID: 7607333605917822213}
   raccImgStun: {fileID: 0}
   RaccImg: {fileID: 0}
 --- !u!114 &7973147396869207313
@@ -4547,6 +4550,7 @@ MonoBehaviour:
   playerpos: {fileID: 175027254741707668}
   confetti: {fileID: 8923365728190213338, guid: 3ea1b514b509fed4e84fd2d1937c7711,
     type: 3}
+  racc: {fileID: 6406643906569567469}
   raccImgStun: {fileID: 0}
   RaccImg: {fileID: 0}
 --- !u!114 &7285086229904348541
