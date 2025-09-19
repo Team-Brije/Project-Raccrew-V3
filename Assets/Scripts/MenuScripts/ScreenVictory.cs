@@ -10,8 +10,8 @@ public class ScreenVictory : MonoBehaviour
     [SerializeField] private Image imageWinner;
     void Start()
     {
-        textWinner.text = "The Winner is :\n" + ColorManagerSingleton.Instance.WinnerName;
-       imageWinner.color = ColorManagerSingleton.Instance.colorWinner;
+        textWinner.SetText(ColorManagerSingleton.Instance.WinnerName);
+       //imageWinner.color = ColorManagerSingleton.Instance.colorWinner;
     }
 
 }
